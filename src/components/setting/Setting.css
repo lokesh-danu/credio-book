@@ -1,0 +1,17 @@
+.setting-item-heading{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #43424B;
+}
+.setting-item-text{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #43424B;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 20px 0px;
+}
