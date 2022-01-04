@@ -1,0 +1,37 @@
+{
+  "name": "mpos_api",
+  "version": "1.0.0",
+  "description": "Crediometer POS Api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Raji Rasheed, Crediometer LLC",
+  "license": "MIT",
+  "dependencies": {
+    "@vgs/collect-js": "^0.6.0",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "generate-api-key": "^1.0.0",
+    "gitignore": "^0.7.0",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "node-fetch": "^3.0.0",
+    "node-jsencrypt": "^1.0.0",
+    "node-rsa": "^1.1.1",
+    "nodemon": "^2.0.12",
+    "request": "^2.88.2",
+    "socket.io": "^2.3.0"
+  }
+}
