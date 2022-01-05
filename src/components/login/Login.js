@@ -1,10 +1,11 @@
-import React, { useState, useMemo} from "react";
+import React, { useState, useMemo } from "react";
 import "./Login.css";
 import logo3 from "../../image/Logo.png";
 import svg1 from "../../image/Hi.svg";
 import countryList from "../countries.json";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
+
 import { JSEncrypt } from "jsencrypt";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
@@ -27,7 +28,7 @@ const Login = () => {
   const [errorState, setError] = useState([false, ""]);
   const [loading, setLoading] = useState(false);
   const options = useMemo(() => countryList, []);
-  // const history = useNavigate();
+  const history = useNavigate();
 
   const handleCountry = (value) => {
     console.log(value);
@@ -78,7 +79,7 @@ const Login = () => {
         console.log(message);
         sessionStorage.setItem("tokenManager", JSON.stringify(message));
         console.log(`ehn you save ??  --- ${sessionStorage.getItem("tokenManager")}`);
-        // history.push(`/dashboard`);
+        history(`/dashboard`);
       } else {
         setLoading(false);
         let message = await response.json();
