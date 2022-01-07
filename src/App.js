@@ -6,7 +6,7 @@ import {
   useRoutes,
 } from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
-import Deposit from "./components/create-deposit/Deposit";
+import Invoice from "./components/Invoice/Invoice";
 import CreateUser from "./components/create-user/Create";
 import Transaction from "./components/transaction/Transaction";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -32,7 +32,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}>
 
           </Route>
-          <Route path="/deposit" element={<Deposit />}>
+          <Route path="/invoice" element={<Invoice />}>
 
           </Route>
           <Route path="/new/user" element={<CreateUser />}>
@@ -47,7 +47,7 @@ function App() {
 
         </Routes >
       </Router >
-    </React.StrictMode>
+    </React.StrictMode >
   );
 
 }

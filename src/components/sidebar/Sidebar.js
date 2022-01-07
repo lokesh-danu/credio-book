@@ -56,31 +56,31 @@ const DesktopComponent = () => {
                     <img src={Logo} className='brand-logo' alt="" />
                     <span className='brand-name'>Credio Books</span>
                 </div>
-                <Link to="/new/user"> <div className='create-user'>
-                    <span className='create-user-text'>+ Create Users</span>
+                <Link to="/new/user" style={{ textDecoration: 'none' }} > <div className='create-user'>
+                    <span className='create-user-text  d-flex justify-content-center'>+ Create Users</span>
                 </div> </Link>
                 <ul className='sidebar-menu-items'>
-                    <Link to="/dashboard">
+                    <Link to="/dashboard" style={{ textDecoration: 'none' }}>
                         <li className='sidebar-menu-item'>
                             <img src={Dash} alt="" />
                             <span className='sidebar-text'>Dashboard</span>
                         </li>
                     </Link>
-                    <Link to="/transactions">
+                    <Link to="/transactions" style={{ textDecoration: 'none' }}>
                         <li className='sidebar-menu-item'>
 
                             <img src={Trans} alt="" />
                             <span className='sidebar-text'>Transactions</span>
                         </li>
                     </Link>
-                    <Link to="/users">
+                    <Link to="/users" style={{ textDecoration: 'none' }}>
                         <li className='sidebar-menu-item'>
                             <img src={User} alt="" />
                             <span className='sidebar-text'>All users</span>
                         </li>
                     </Link>
 
-                    <Link to="/settings">
+                    <Link to="/settings" style={{ textDecoration: 'none' }}>
                         <li className='sidebar-menu-item'>
                             <img src={Set} alt="" />
                             <span className='sidebar-text'>Settings</span>
@@ -88,7 +88,7 @@ const DesktopComponent = () => {
                     </Link>
                 </ul>
             </div>
-        </div>
+        </div >
         // </Router>
     )
 }

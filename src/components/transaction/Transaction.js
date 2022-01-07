@@ -4,7 +4,7 @@ import "./Transaction.css";
 import Store from "../../image/Store.png";
 import Sidebar from '../sidebar/Sidebar';
 import Navbar from '../Navbar/Navbar';
-
+import { useNavigate } from 'react-router-dom';
 const viewportContext = React.createContext({});
 
 const ViewportProvider = ({ children }) => {
@@ -194,6 +194,15 @@ const MobileComponent = () => {
 }
 
 const DesktopComponent = () => {
+
+    const history = useNavigate();
+
+    var routeChange = (path) => {
+        console.log(path);
+
+        history(path);
+    }
+
     return (
         <div>
             <Navbar ></Navbar>
@@ -201,7 +210,7 @@ const DesktopComponent = () => {
             <div className='display-page'>
                 <div className='dashboard-navbar'>
                     <a style={{ marginLeft: "-2.5rem", fontWeight: "700" }} className='dashboard-nav'>Transactions Details</a>
-                    <button className='btn btn-outline-danger'>Invoices</button>
+                    <button className='btn btn-outline-danger' onClick={() => routeChange('/invoice')}>Invoices</button>
                     <button className='btn btn-danger'>Make Payment</button>
                 </div>
                 <div className="row ">
@@ -366,7 +375,7 @@ const DesktopComponent = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

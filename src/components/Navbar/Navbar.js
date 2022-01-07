@@ -65,13 +65,13 @@ const DesktopComponent = () => {
         <div>
             <div className='top-navbar'>
                 <i class="fas fa-sliders-h nav-icon"></i>
-                <a class="navbar-brand">Your service</a>
+                <a class="navbar-brand">Your service </a>
                 <div class="input-group ">
                     <input className='search-here' type="text" placeholder='Search' />
                     {/* <i class="fas fa-search search-icon fa-sm" ></i> */}
                 </div>
-                <i class="far fa-bell"></i>
                 <i class="fas fa-circle"></i>
+                <i class="far fa-bell"></i>
                 <span className='user-name'>Adewumi</span>
             </div>
         </div>

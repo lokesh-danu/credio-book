@@ -87,7 +87,7 @@ class DesktopComponent extends React.Component {
     };
 
 
-    await fetch(`https://credio-merchant.herokuapp.com/api/v1/credio_store/overview`,
+    await fetch(`https://credio-merchant.herokuapp.com/api/v1/credio_store/currentUser`,
       requestOptions)
       .then(results => results.json()).then((transfer) => {
         // let over = overview.json();
@@ -106,6 +106,8 @@ class DesktopComponent extends React.Component {
   }
   render() {
     const { isLoaded, data, } = this.state;
+
+    console.log(data.data);
     return (
       <div>
         <NavBar></NavBar>
@@ -134,49 +136,47 @@ class DesktopComponent extends React.Component {
 
 
               <div className='row p-3'>
+                {
+                  data.data.map((link) =>
+                    <div className='col-md-3'>
 
-
-                <div className='col-md-3'>
-
-
-                  <ul>
-
-
-                    < li className='my-3'
-                    >
-                      <div className='card stores-card'>
-                        <div className='card-body'>
-                          <div className='store-info'>
-                            <img className='store-dp' src={Store} />
-                            <div className='store-infos'>
-                              <span className='store-name'>Tony T store</span>
-                              <span className='store-balance'>$12435.65</span>
+                      <ul>
+                        < li className='my-3'
+                        >
+                          <div className='card stores-card'>
+                            <div className='card-body'>
+                              <div className='store-info py-4'>
+                                <img className='store-dp' src={Store} />
+                                <div className='store-infos'>
+                                  <span className='store-name'>{link.businessName}</span>
+                                  <span className='store-balance'>$ {link.balance}</span>
+                                </div>
+                              </div>
+                              <hr />
+                              <div className='row' style={{ marginTop: "-0.5rem" }}>
+                                <div className='col-md-12 my-2 column-store'>
+                                  <span className='deposit-text'>Business Details</span>
+                                  <span className='deposit-text'><img src={Loc} className=' pe-2' />{link.businessAddress}</span>
+                                </div>
+                                <div className='col-md-12 my-2 column-store'>
+                                  <span className='deposit-text'>Bank Details</span>
+                                  <span className='deposit-text'><img src={Bank} className=' pe-2' />{link.bankDetails.accountNumber} -- {link.bankDetails.ifsc}</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <hr />
-                          <div className='row' style={{ marginTop: "-0.5rem" }}>
-                            <div className='col-md-12 my-2 column-store'>
-                              <span className='deposit-text'>Business Details</span>
-                              <span className='deposit-text'><img src={Loc} />New Balance</span>
-                            </div>
-                            <div className='col-md-12 my-2 column-store'>
-                              <span className='deposit-text'>Bank Details</span>
-                              <span className='deposit-text'><img src={Bank} />0231973328 -- Wema Bank</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
+                        </li>
 
 
 
-                  </ul>
+                      </ul>
 
 
 
-                </div>
-                {/* })
-                } */}
+                    </div>
+
+                  )
+                }
 
               </div>
 
