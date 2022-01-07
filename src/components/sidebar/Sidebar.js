@@ -66,7 +66,7 @@ const DesktopComponent = () => {
                             <span className='sidebar-text'>Dashboard</span>
                         </li>
                     </Link>
-                    <Link to="/transaction">
+                    <Link to="/transactions">
                         <li className='sidebar-menu-item'>
 
                             <img src={Trans} alt="" />
