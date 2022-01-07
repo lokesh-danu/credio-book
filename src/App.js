@@ -12,40 +12,42 @@ import Transaction from "./components/transaction/Transaction";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Users from "./components/users/users";
 // import { BrowserRouter as Router } from "react-router-dom";
-import Login from './components/Login/Login';
+import Login from './components/Auth/Auth';
 
 
 function App() {
 
 
   return (
-    <Router>
-      <Routes>
+    <React.StrictMode>
+      <Router>
+        <Routes>
 
-        <Route exact path="/" element={<Login />} >
+          <Route exact path="/" element={<Login />} >
 
-        </Route>
-        <Route exact path="/transactions" element={<Transaction />}>
+          </Route>
+          <Route exact path="/transactions" element={<Transaction />}>
 
-        </Route>
-        <Route path="/dashboard" element={<Dashboard />}>
+          </Route>
+          <Route path="/dashboard" element={<Dashboard />}>
 
-        </Route>
-        <Route path="/deposit" element={<Deposit />}>
+          </Route>
+          <Route path="/deposit" element={<Deposit />}>
 
-        </Route>
-        <Route path="/new/user" element={<CreateUser />}>
+          </Route>
+          <Route path="/new/user" element={<CreateUser />}>
 
-        </Route>
-        <Route path="/users" element={<Users />}>
+          </Route>
+          <Route path="/users" element={<Users />}>
 
-        </Route>
-        {/* <Route path="/balance">
+          </Route>
+          {/* <Route path="/balance">
                 <Balance />
               </Route> */}
 
-      </Routes >
-    </Router >
+        </Routes >
+      </Router >
+    </React.StrictMode>
   );
 
 }
