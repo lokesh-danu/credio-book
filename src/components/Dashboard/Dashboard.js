@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./dashboard.css";
 import Store from "../../image/Store.png";
 import NavBar from "../Navbar/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import SideBar from "../../components/sidebar/Sidebar";
 
 const viewportContext = React.createContext({});
