@@ -255,30 +255,31 @@ class DesktopComponent extends React.Component {
                 <Navbar ></Navbar>
                 <Sidebar index='transactions' ></Sidebar>
 
-                {!isLoaded ? (
-                    <div class="container h-100">
-                        <div class="row h-100 justify-content-center align-items-center">
 
-                            <FontAwesomeIcon
-                                className="spinner mt-6 mb-4"
-                                size="6x"
-                                icon={faSpinner}
-                            ></FontAwesomeIcon>
+                <div className='display-page'>
+                    {!isLoaded ? (
+                        <div class="container h-100">
+                            <div class="row h-100 justify-content-center align-items-center">
 
+                                <FontAwesomeIcon
+                                    className="spinner mt-6 mb-4"
+                                    size="6x"
+                                    icon={faSpinner}
+                                ></FontAwesomeIcon>
+
+                            </div>
                         </div>
-                    </div>
 
 
-                ) : (
-                    <div className='display-page'>
+                    ) : (<div>
                         <div className='dashboard-navbar'>
                             <a style={{ marginLeft: "-2.5rem", fontWeight: "700" }} className='dashboard-nav'>Transactions Details</a>
                             <button className='btn btn-outline-danger' >Invoices</button>
                             <button className='btn btn-danger'>Make Payment</button>
                         </div>
                         <div className="row ">
-                            <div className='col-md-4'>
-                                <div className='today-button'>
+                            <div className='col-md-3'>
+                                <div className='today-button ms-4 mt-3 pe-4'>
                                     <button className='btn btn-today'>Today
                                         <span className='arrow'>
                                             <i class="fas fa-chevron-down"></i>
@@ -286,81 +287,40 @@ class DesktopComponent extends React.Component {
                                     </button>
                                 </div>
                                 <ul className='stores'>
-                                    <li className='one-stores'>
-                                        <div className='card left-card'>
-                                            <div className='card-body'>
-                                                <div className='store-info'>
-                                                    <img className='store-dp' src={Store} />
-                                                    <div className='store-infos'>
-                                                        <span className='store-name'>Tony T store</span>
-                                                        <span className='store-balance'>$12435.65</span>
+
+                                    {
+
+                                        data.data.map((item) => {
+                                            return <li className='' >
+                                                <div className='card left-card'>
+                                                    <div className='card-body'>
+                                                        <div className='store-info'>
+                                                            <img className='store-dp' src={Store} />
+                                                            <div className='store-infos'>
+                                                                <span className='store-name'>{item.user.businessName}</span>
+                                                                <span className='store-balance'>${item.user.balance}</span>
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <div className='row' style={{ marginTop: "0.5rem" }}>
+                                                            <div className='col-md-6 column-store'>
+                                                                <span className='deposit-text'>New Balance</span>
+                                                                <span className='deposit-text'>${item.user.balance}</span>
+                                                            </div>
+                                                            <div className='col-md-6 column-store'>
+                                                                <span className='balance'>{item.user.updatedAt.substring(0, 10)}</span>
+                                                                <span className='balance'>{item.user.updatedAt.substring(11, 16)}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <hr />
-                                                <div className='row' style={{ marginTop: "0.5rem" }}>
-                                                    <div className='col-md-6 column-store'>
-                                                        <span className='deposit-text'>Deposit</span>
-                                                        <span className='deposit-text'>New Balance</span>
-                                                    </div>
-                                                    <div className='col-md-6 column-store'>
-                                                        <span className='balance'>-$5000.65</span>
-                                                        <span className='balance'>$900.65</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className='my-3 one-stores'>
-                                        <div className='card left-card'>
-                                            <div className='card-body'>
-                                                <div className='store-info'>
-                                                    <img className='store-dp' src={Store} />
-                                                    <div className='store-infos'>
-                                                        <span className='store-name'>Tony T store</span>
-                                                        <span className='store-balance'>$12435.65</span>
-                                                    </div>=
-                                                </div>
-                                                <hr />
-                                                <div className='row' style={{ marginTop: "0.5rem" }}>
-                                                    <div className='col-md-6 column-store'>
-                                                        <span className='deposit-text'>Deposit</span>
-                                                        <span className='deposit-text'>New Balance</span>
-                                                    </div>
-                                                    <div className='col-md-6 column-store'>
-                                                        <span className='balance'>-$5000.65</span>
-                                                        <span className='balance'>$900.65</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className='my-3 one-stores'>
-                                        <div className='card left-card'>
-                                            <div className='card-body'>
-                                                <div className='store-info'>
-                                                    <img className='store-dp' src={Store} />
-                                                    <div className='store-infos'>
-                                                        <span className='store-name'>Tony T store</span>
-                                                        <span className='store-balance'>$12435.65</span>
-                                                    </div>=
-                                                </div>
-                                                <hr />
-                                                <div className='row' style={{ marginTop: "0.5rem" }}>
-                                                    <div className='col-md-6 column-store'>
-                                                        <span className='deposit-text'>Deposit</span>
-                                                        <span className='deposit-text'>New Balance</span>
-                                                    </div>
-                                                    <div className='col-md-6 column-store'>
-                                                        <span className='balance'>-$5000.65</span>
-                                                        <span className='balance'>$900.65</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                            </li>
+                                        }
+                                        )
+                                    }
                                 </ul>
                             </div>
-                            <div className='col-md-8'>
+                            <div className='col-md-9'>
                                 <div class="button-grp">
                                     <button className='btn btn-deposit'>Deposit</button>
                                     <button className='mx-2 btn btn-withdraw'>Withdraw</button>
@@ -436,9 +396,11 @@ class DesktopComponent extends React.Component {
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                )}
+                        </div >
+                    </div >
+                    )
+                    }
+                </div>
             </div>
 
 

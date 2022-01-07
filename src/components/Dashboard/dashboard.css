@@ -9,8 +9,8 @@
     overflow-y: hidden;
 }
 .dashboard-navbar{
-    width: 1290px;
-    height: 80px;
+    width: 100%;
+    height: 70px;
     background: #ffffff;
     border: 1px solid #E5E5E5;
 }
