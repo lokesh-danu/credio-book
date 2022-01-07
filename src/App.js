@@ -5,7 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Users from "./components/users/users";
 // import { BrowserRouter as Router } from "react-router-dom";
-import Login from './components/Login/Login';
+
 
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
     <Router>
       <Routes>
 
-        <Route exact path="/" element={<Login />} >
+        {/* <Route exact path="/" element={<Login />} >
 
-        </Route>
-        <Route exact path="/transactions" element={<Transaction />}>
+        </Route> */}
+        <Route exact path="/" element={<Transaction />}>
 
         </Route>
         <Route path="/dashboard" element={<Dashboard />}>
