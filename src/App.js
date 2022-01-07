@@ -1,14 +1,7 @@
-import React, { createContext, useState } from "react";
+import React from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import {
-  BrowserRouter as Router, Route, Routes,
-  useRoutes,
-} from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
-import Deposit from "./components/create-deposit/Deposit";
-import CreateUser from "./components/create-user/Create";
-import Transaction from "./components/transaction/Transaction";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Users from "./components/users/users";
 // import { BrowserRouter as Router } from "react-router-dom";
@@ -16,8 +9,6 @@ import Login from './components/Login/Login';
 
 
 function App() {
-
-
   return (
     <Router>
       <Routes>
@@ -47,7 +38,6 @@ function App() {
       </Routes >
     </Router >
   );
-
 }
 
 export default App;

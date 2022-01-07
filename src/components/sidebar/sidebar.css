@@ -54,7 +54,8 @@
     padding-top: 20px;
 }
 i{
-    font-size: 30px;
+    font-size: 25px;
+    opacity: 0.6;
 }
 
 Link{
@@ -66,4 +67,5 @@ Link{
     font-size: 16px;
     font-weight: 300;
     line-height: 27px;
+    text-decoration: none;
 }

@@ -5,8 +5,6 @@ import Store from "../../image/Store.png";
 import NavBar from "../Navbar/Navbar";
 import SideBar from "../../components/sidebar/Sidebar";
 
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const viewportContext = React.createContext({});
 
 const ViewportProvider = ({ children }) => {
@@ -358,7 +356,6 @@ class DesktopComponent extends React.Component {
       </div >
     )
   }
-
 }
 
 
