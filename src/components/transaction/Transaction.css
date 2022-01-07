@@ -6,8 +6,8 @@
 
 .today-button{
     position: absolute;
-    left: 2%;
-    top: 12%;
+    left: 10%;
+    top: 2.2rem;
     width: 250px;
     height: 50px;
     background: crimson;
@@ -72,8 +72,8 @@
     border: 1px solid crimson;
 }
 .detail-card{
-    width: 750px;
-    height: 500px;
+    /* width: 750px; */
+    /* height: 500px; */
     position: relative;
     top: 10%;
     background: #FFFFFF;

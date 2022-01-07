@@ -2,6 +2,8 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./dashboard.css";
 import Store from "../../image/Store.png";
+import NavBar from "../Navbar/Navbar";
+import SideBar from "../../components/sidebar/Sidebar";
 
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -104,240 +106,256 @@ class DesktopComponent extends React.Component {
     const { isLoaded, data, } = this.state;
     return (
       <div>
-        {!isLoaded ? (
-          <div class="container h-100">
-            <div class="row h-100 justify-content-center align-items-center">
+        <NavBar></NavBar>
+        <SideBar ></SideBar>
+        <div className='display-page'>
 
-              <FontAwesomeIcon
-                className="spinner mt-6 mb-4"
-                size="6x"
-                icon={faSpinner}
-              ></FontAwesomeIcon>
+          {!isLoaded ? (
+            <div class="container h-100">
+              <div class="row h-100 justify-content-center align-items-center">
 
-            </div>
-          </div>
+                <FontAwesomeIcon
+                  className="spinner mt-6 mb-4"
+                  size="6x"
+                  icon={faSpinner}
+                ></FontAwesomeIcon>
 
-        ) : (
-          <div className='display-page'>
-            <div className='dashboard-navbar'>
-              <i class="fas fa-circle dash-icon"></i>
-              <a href="" className='dashboard-nav'>Your service</a>
-              <button className='btn btn-danger'>Make Payment</button>
-            </div>
-            <div className='row first-row'>
-              <div className='col-md-8'>
-                <div className='card cash-flow-card'>
-
-                </div>
-              </div>
-              <div className='col-md-4'>
-                <div className='card transaction-card'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>Transactions</h5>
-                    <ul>
-                      {
-                        data.data.transaction.map((deposit, index) => {
-
-                          < li className={index == 0 ? '' : 'my-3'
-                          } >
-                            <div className='card stores-card'>
-                              <div className='card-body'>
-                                <div className='store-info'>
-                                  <img className='store-dp' src={Store} />
-                                  <div className='store-infos'>
-                                    <span className='store-name'>Tony T store</span>
-                                    <span className='store-balance'>$12435.65</span>
-                                  </div>
-                                </div>
-                                <hr />
-                                <div className='row' style={{ marginTop: "-0.5rem" }}>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='deposit-text'>Deposit</span>
-                                    <span className='deposit-text'>New Balance</span>
-                                  </div>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='balance'>-$5000.65</span>
-                                    <span className='balance'>$900.65</span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-
-                        })
-                      }
-                      <a href="#" className='more'>More...</a>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
-            <div className='row second-row'>
-              <div className='col-md-4'>
-                <div className='card deposit-card'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>Deposit</h5>
-                    <ul>
-                      {
-                        data.data.deposit.map((deposit, index) => {
 
-                          < li className={index == 0 ? '' : 'my-3'
-                          } >
-                            <div className='card stores-card'>
-                              <div className='card-body'>
-                                <div className='store-info'>
-                                  <img className='store-dp' src={Store} />
-                                  <div className='store-infos'>
-                                    <span className='store-name'>Tony T store</span>
-                                    <span className='store-balance'>$12435.65</span>
+          ) : (
+            <div >
+              <div className='dashboard-navbar'>
+                <i class="fas fa-circle dash-icon"></i>
+                <a href="" className='dashboard-nav'>Your service</a>
+                <button className='btn btn-danger'>Make Payment</button>
+              </div >
+
+              <div className='row p-3' >
+                <div className='col-md-8'>
+                  <div className='card transaction-card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>Cash Flow</h5>
+                      <ul>
+                        {
+
+                        }
+                        <a href="#" className='more'>More...</a>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-md-4'>
+                  <div className='card transaction-card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>Transactions</h5>
+                      <ul>
+                        {
+                          data.data.transaction.map((deposit, index) => {
+
+                            < li className={index == 0 ? '' : 'my-3'
+                            } >
+                              <div className='card stores-card'>
+                                <div className='card-body'>
+                                  <div className='store-info'>
+                                    <img className='store-dp' src={Store} />
+                                    <div className='store-infos'>
+                                      <span className='store-name'>Tony T store</span>
+                                      <span className='store-balance'>$12435.65</span>
+                                    </div>
                                   </div>
-                                </div>
-                                <hr />
-                                <div className='row' style={{ marginTop: "-0.5rem" }}>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='deposit-text'>Deposit</span>
-                                    <span className='deposit-text'>New Balance</span>
-                                  </div>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='balance'>-$5000.65</span>
-                                    <span className='balance'>$900.65</span>
+                                  <hr />
+                                  <div className='row' style={{ marginTop: "-0.5rem" }}>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='deposit-text'>Deposit</span>
+                                      <span className='deposit-text'>New Balance</span>
+                                    </div>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='balance'>-$5000.65</span>
+                                      <span className='balance'>$900.65</span>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </li>
+                            </li>
 
-                        })
-                      }
-
-                    </ul>
+                          })
+                        }
+                        <a href="#" className='more'>More...</a>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className='col-md-4'>
-                <div className='card withdraw-card'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>Withdraw</h5>
-                    <ul>
-                      {
-                        data.data.withdrawal.map((deposit, index) => {
+              <div className='row p-3'>
+                <div className='col-md-3'>
+                  <div className='card deposit-card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>Deposit</h5>
+                      <ul>
+                        {
+                          data.data.deposit.map((deposit, index) => {
 
-                          < li className={index == 0 ? '' : 'my-3'
-                          } >
-                            <div className='card stores-card'>
-                              <div className='card-body'>
-                                <div className='store-info'>
-                                  <img className='store-dp' src={Store} />
-                                  <div className='store-infos'>
-                                    <span className='store-name'>Tony T store</span>
-                                    <span className='store-balance'>$12435.65</span>
+                            < li className={index == 0 ? '' : 'my-3'
+                            } >
+                              <div className='card stores-card'>
+                                <div className='card-body'>
+                                  <div className='store-info'>
+                                    <img className='store-dp' src={Store} />
+                                    <div className='store-infos'>
+                                      <span className='store-name'>Tony T store</span>
+                                      <span className='store-balance'>$12435.65</span>
+                                    </div>
                                   </div>
-                                </div>
-                                <hr />
-                                <div className='row' style={{ marginTop: "-0.5rem" }}>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='deposit-text'>Deposit</span>
-                                    <span className='deposit-text'>New Balance</span>
-                                  </div>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='balance'>-$5000.65</span>
-                                    <span className='balance'>$900.65</span>
+                                  <hr />
+                                  <div className='row' style={{ marginTop: "-0.5rem" }}>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='deposit-text'>Deposit</span>
+                                      <span className='deposit-text'>New Balance</span>
+                                    </div>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='balance'>-$5000.65</span>
+                                      <span className='balance'>$900.65</span>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </li>
+                            </li>
 
-                        })
-                      }
-                    </ul>
+                          })
+                        }
+
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className='col-md-4'>
-                <div className='card advance-card'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>Advance</h5>
-                    <ul>
-                      {
-                        data.data.advance.map((deposit, index) => {
+                <div className='col-md-3'>
+                  <div className='card withdraw-card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>Withdraw</h5>
+                      <ul>
+                        {
+                          data.data.withdrawal.map((deposit, index) => {
 
-                          < li className={index == 0 ? '' : 'my-3'
-                          } >
-                            <div className='card stores-card'>
-                              <div className='card-body'>
-                                <div className='store-info'>
-                                  <img className='store-dp' src={Store} />
-                                  <div className='store-infos'>
-                                    <span className='store-name'>Tony T store</span>
-                                    <span className='store-balance'>$12435.65</span>
+                            < li className={index == 0 ? '' : 'my-3'
+                            } >
+                              <div className='card stores-card'>
+                                <div className='card-body'>
+                                  <div className='store-info'>
+                                    <img className='store-dp' src={Store} />
+                                    <div className='store-infos'>
+                                      <span className='store-name'>Tony T store</span>
+                                      <span className='store-balance'>$12435.65</span>
+                                    </div>
                                   </div>
-                                </div>
-                                <hr />
-                                <div className='row' style={{ marginTop: "-0.5rem" }}>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='deposit-text'>Deposit</span>
-                                    <span className='deposit-text'>New Balance</span>
-                                  </div>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='balance'>-$5000.65</span>
-                                    <span className='balance'>$900.65</span>
+                                  <hr />
+                                  <div className='row' style={{ marginTop: "-0.5rem" }}>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='deposit-text'>Deposit</span>
+                                      <span className='deposit-text'>New Balance</span>
+                                    </div>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='balance'>-$5000.65</span>
+                                      <span className='balance'>$900.65</span>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </li>
+                            </li>
 
-                        })
-                      }
-                    </ul>
+                          })
+                        }
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className='col-md-4'>
-                <div className='card user-card'>
-                  <div className='card-body'>
-                    <h5 className='card-title'>User</h5>
-                    <ul>
-                      {
-                        data.data.user.map((deposit, index) => {
+                <div className='col-md-3'>
+                  <div className='card advance-card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>Advance</h5>
+                      <ul>
+                        {
+                          data.data.advance.map((deposit, index) => {
 
-                          < li className={index == 0 ? '' : 'my-3'
-                          } >
-                            <div className='card stores-card'>
-                              <div className='card-body'>
-                                <div className='store-info'>
-                                  <img className='store-dp' src={Store} />
-                                  <div className='store-infos'>
-                                    <span className='store-name'>Tony T store</span>
-                                    <span className='store-balance'>$12435.65</span>
+                            < li className={index == 0 ? '' : 'my-3'
+                            } >
+                              <div className='card stores-card'>
+                                <div className='card-body'>
+                                  <div className='store-info'>
+                                    <img className='store-dp' src={Store} />
+                                    <div className='store-infos'>
+                                      <span className='store-name'>Tony T store</span>
+                                      <span className='store-balance'>$12435.65</span>
+                                    </div>
                                   </div>
-                                </div>
-                                <hr />
-                                <div className='row' style={{ marginTop: "-0.5rem" }}>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='deposit-text'>Deposit</span>
-                                    <span className='deposit-text'>New Balance</span>
-                                  </div>
-                                  <div className='col-md-6 column-store'>
-                                    <span className='balance'>-$5000.65</span>
-                                    <span className='balance'>$900.65</span>
+                                  <hr />
+                                  <div className='row' style={{ marginTop: "-0.5rem" }}>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='deposit-text'>Deposit</span>
+                                      <span className='deposit-text'>New Balance</span>
+                                    </div>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='balance'>-$5000.65</span>
+                                      <span className='balance'>$900.65</span>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </li>
+                            </li>
 
-                        })
-                      }
-                    </ul>
+                          })
+                        }
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-md-3'>
+                  <div className='card user-card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>User</h5>
+                      <ul>
+                        {
+                          data.data.user.map((deposit, index) => {
+
+                            < li className={index == 0 ? '' : 'my-3'
+                            } >
+                              <div className='card stores-card'>
+                                <div className='card-body'>
+                                  <div className='store-info'>
+                                    <img className='store-dp' src={Store} />
+                                    <div className='store-infos'>
+                                      <span className='store-name'>Tony T store</span>
+                                      <span className='store-balance'>$12435.65</span>
+                                    </div>
+                                  </div>
+                                  <hr />
+                                  <div className='row' style={{ marginTop: "-0.5rem" }}>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='deposit-text'>Deposit</span>
+                                      <span className='deposit-text'>New Balance</span>
+                                    </div>
+                                    <div className='col-md-6 column-store'>
+                                      <span className='balance'>-$5000.65</span>
+                                      <span className='balance'>$900.65</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+
+                          })
+                        }
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
+
+
             </div>
-          </div>)
-        }
-      </div>
+          )}
+        </div>
+      </div >
     )
   }
 
@@ -358,3 +376,4 @@ export default function Dashboard() {
     </ViewportProvider>
   );
 }
+

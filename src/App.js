@@ -10,6 +10,7 @@ import Deposit from "./components/create-deposit/Deposit";
 import CreateUser from "./components/create-user/Create";
 import Transaction from "./components/transaction/Transaction";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Users from "./components/users/users";
 // import { BrowserRouter as Router } from "react-router-dom";
 import Login from './components/Login/Login';
 
@@ -34,6 +35,9 @@ function App() {
 
         </Route>
         <Route path="/new/user" element={<CreateUser />}>
+
+        </Route>
+        <Route path="/users" element={<Users />}>
 
         </Route>
         {/* <Route path="/balance">

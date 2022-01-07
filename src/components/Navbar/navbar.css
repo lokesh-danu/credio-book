@@ -9,7 +9,7 @@
 .nav-icon{
     position: absolute;
     top: 28%;
-    left: 5%;
+    left: 3.5%;
     color: #861F41;
 }
 .navbar-brand{
@@ -17,15 +17,15 @@
     top: 25%;
     left: 8%;
     color: #424242;
-    font-size: 22px;
+    font-size: 19px;
     line-height: 27px;
 }
 .input-group{
     width: 300px;
     height: 40px;
-    border: 1px solid #424242;
+    /* border: 1px solid #424242; */
     position: absolute;
-    top: 22%;
+    top: 20%;
     left: 55%;
     border-radius: 30px;
 }
@@ -36,28 +36,31 @@
 }
 .search-icon{
    position: absolute;
-   left: 80%;
-   top: 20%;
-   color: #090909;
+   right: 15%;
+   border-radius: 30px;
+   top: 25%;
+   color: #6b6666;
 }
 .fa-bell{
     color: #424242;
     position: absolute;
-    left: 80%;
+    right: 8%;
     top: 28%;
 }
+
+
 .fa-circle{
     color: #707070;
     position: absolute;
-    left: 84%;
+    right: 6%;
     top: 28%;
 }
 .user-name{
     position: absolute;
     top: 28%;
-    left: 87%;
-    font-size: 22px;
-    font-weight: 500;
+    right: 1%;
+    font-size: 19px;
+    font-weight: 400;
     line-height: 27px;
     color: #707070;
 }
