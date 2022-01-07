@@ -9,6 +9,20 @@
     box-sizing: border-box;
 }
 
+.active{
+    background: #BC0018;
+    color: #FFFFFF;
+    border: 1px solid #BC0018;
+    padding-left: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.active-create{
+    background: #BC0018;
+    color: #FFFFFF;
+    border: 1px #FFFFFF  !important; 
+}
+
 .sidebar-brand{
     width: 200px;
     height: 70px;
@@ -40,7 +54,6 @@
 .create-user-text{
     font-size: 18px;
     /* text-align: center; */
-    
     position: relative;
     top: 15%;
     /* left: 10%; */
@@ -48,12 +61,13 @@
 .sidebar-menu-items{
     position: absolute;
     top: 20%;
-    left: 5%;
+    left: 1%;
 }
 .sidebar-menu-item{
     list-style-type: none;
     cursor: pointer;
-    padding-top: 20px;
+    margin-top: 10px;
+    padding: 2.2% 50px 2.2% 5px;
 }
 i{
     font-size: 25px;

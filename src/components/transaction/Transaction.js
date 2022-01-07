@@ -206,7 +206,7 @@ const DesktopComponent = () => {
     return (
         <div>
             <Navbar ></Navbar>
-            <Sidebar ></Sidebar>
+            <Sidebar index='transactions' ></Sidebar>
             <div className='display-page'>
                 <div className='dashboard-navbar'>
                     <a style={{ marginLeft: "-2.5rem", fontWeight: "700" }} className='dashboard-nav'>Transactions Details</a>

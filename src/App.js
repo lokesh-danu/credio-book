@@ -13,6 +13,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Users from "./components/users/users";
 // import { BrowserRouter as Router } from "react-router-dom";
 import Login from './components/Auth/Auth';
+import Settings from './components/setting/Setting';
 
 
 function App() {
@@ -41,6 +42,11 @@ function App() {
           <Route path="/users" element={<Users />}>
 
           </Route>
+          <Route path="/settings" element={<Settings />}>
+
+          </Route>
+
+          {/*  */}
           {/* <Route path="/balance">
                 <Balance />
               </Route> */}

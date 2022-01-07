@@ -107,7 +107,7 @@ class DesktopComponent extends React.Component {
     return (
       <div>
         <NavBar></NavBar>
-        <SideBar ></SideBar>
+        <SideBar index="dashboard" ></SideBar>
         <div className='display-page'>
 
           {!isLoaded ? (

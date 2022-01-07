@@ -118,7 +118,7 @@ const DesktopComponent = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <SideBar ></SideBar>
+            <SideBar index='create'></SideBar>
 
             <div className='display-page'>
                 <div className='dashboard-navbar'>

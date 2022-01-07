@@ -6,23 +6,23 @@ import Store from "../../image/Store.png";
 const viewportContext = React.createContext({});
 
 const ViewportProvider = ({ children }) => {
-  const [width, setWidth] = React.useState(window.innerWidth);
-  const [height, setHeight] = React.useState(window.innerHeight);
-  const handleWindowResize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const [height, setHeight] = React.useState(window.innerHeight);
+    const handleWindowResize = () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    };
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+    React.useEffect(() => {
+        window.addEventListener("resize", handleWindowResize);
+        return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
 
-  return (
-    <viewportContext.Provider value={{ width, height }}>
-      {children}
-    </viewportContext.Provider>
-  );
+    return (
+        <viewportContext.Provider value={{ width, height }}>
+            {children}
+        </viewportContext.Provider>
+    );
 };
 
 
@@ -32,9 +32,9 @@ const useViewport = () => {
 };
 
 const MobileComponent = () => {
-    return(
+    return (
         <div>
-            <div className='mobile-display' style={{background: "White"}}>
+            <div className='mobile-display' style={{ background: "White" }}>
                 <ul className='setting-items my-3'>
                     <span className='setting-item-heading my-2'>Customers</span>
                     <li className='setting-items my-2'>
@@ -53,7 +53,7 @@ const MobileComponent = () => {
                         <span className='setting-item-text'>Credio labs</span>
                     </li>
                 </ul>
-                <hr/>
+                <hr />
                 <ul className='setting-items my-3'>
                     <span className='setting-item-heading my-2'>Vendors</span>
                     <li className='setting-items my-2'>
@@ -69,7 +69,7 @@ const MobileComponent = () => {
                         <span className='setting-item-text'>Attachment</span>
                     </li>
                 </ul>
-                <hr/>
+                <hr />
                 <ul className='setting-items my-3'>
                     <span className='setting-item-heading my-2'>Employee</span>
                     <li className='setting-items my-2'>
@@ -85,7 +85,7 @@ const MobileComponent = () => {
 }
 
 const DesktopComponent = () => {
-    return(
+    return (
         <></>
     )
 }
@@ -94,14 +94,12 @@ const DesktopComponent = () => {
 const MyComponent = () => {
     const { width } = useViewport();
     const breakpoint = 620;
-  
+
     return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
 };
 
-export default function Setting(){
+export default function Setting() {
     return (
-        <ViewportProvider>
-          <MyComponent />
-        </ViewportProvider>
+        <MobileComponent />
     );
 }
