@@ -4,6 +4,8 @@ import "./Transaction.css";
 import Store from "../../image/Store.png";
 import Sidebar from '../sidebar/Sidebar';
 import Navbar from '../Navbar/Navbar';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
 const viewportContext = React.createContext({});
 
@@ -193,191 +195,255 @@ const MobileComponent = () => {
     )
 }
 
-const DesktopComponent = () => {
+class DesktopComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.index = 0;
+        this.state = {
+            data: {},
+            isLoaded: false,
+        };
 
-    const history = useNavigate();
-
-    var routeChange = (path) => {
-        console.log(path);
-
-        history(path);
     }
 
-    return (
-        <div>
-            <Navbar ></Navbar>
-            <Sidebar index='transactions' ></Sidebar>
-            <div className='display-page'>
-                <div className='dashboard-navbar'>
-                    <a style={{ marginLeft: "-2.5rem", fontWeight: "700" }} className='dashboard-nav'>Transactions Details</a>
-                    <button className='btn btn-outline-danger' onClick={() => routeChange('/invoice')}>Invoices</button>
-                    <button className='btn btn-danger'>Make Payment</button>
-                </div>
-                <div className="row ">
-                    <div className='col-md-4'>
-                        <div className='today-button'>
-                            <button className='btn btn-today'>Today
-                                <span className='arrow'>
-                                    <i class="fas fa-chevron-down"></i>
-                                </span>
-                            </button>
-                        </div>
-                        <ul className='stores'>
-                            <li className='one-stores'>
-                                <div className='card left-card'>
-                                    <div className='card-body'>
-                                        <div className='store-info'>
-                                            <img className='store-dp' src={Store} />
-                                            <div className='store-infos'>
-                                                <span className='store-name'>Tony T store</span>
-                                                <span className='store-balance'>$12435.65</span>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div className='row' style={{ marginTop: "0.5rem" }}>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='deposit-text'>Deposit</span>
-                                                <span className='deposit-text'>New Balance</span>
-                                            </div>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='balance'>-$5000.65</span>
-                                                <span className='balance'>$900.65</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className='my-3 one-stores'>
-                                <div className='card left-card'>
-                                    <div className='card-body'>
-                                        <div className='store-info'>
-                                            <img className='store-dp' src={Store} />
-                                            <div className='store-infos'>
-                                                <span className='store-name'>Tony T store</span>
-                                                <span className='store-balance'>$12435.65</span>
-                                            </div>=
-                                        </div>
-                                        <hr />
-                                        <div className='row' style={{ marginTop: "0.5rem" }}>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='deposit-text'>Deposit</span>
-                                                <span className='deposit-text'>New Balance</span>
-                                            </div>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='balance'>-$5000.65</span>
-                                                <span className='balance'>$900.65</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className='my-3 one-stores'>
-                                <div className='card left-card'>
-                                    <div className='card-body'>
-                                        <div className='store-info'>
-                                            <img className='store-dp' src={Store} />
-                                            <div className='store-infos'>
-                                                <span className='store-name'>Tony T store</span>
-                                                <span className='store-balance'>$12435.65</span>
-                                            </div>=
-                                        </div>
-                                        <hr />
-                                        <div className='row' style={{ marginTop: "0.5rem" }}>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='deposit-text'>Deposit</span>
-                                                <span className='deposit-text'>New Balance</span>
-                                            </div>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='balance'>-$5000.65</span>
-                                                <span className='balance'>$900.65</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className='col-md-8'>
-                        <div class="button-grp">
-                            <button className='btn btn-deposit'>Deposit</button>
-                            <button className='mx-2 btn btn-withdraw'>Withdraw</button>
-                            <button className='mx-2 btn btn-advance'>Advance</button>
-                            <button className='mx-5 btn btn-print'>Print</button>
-                        </div>
-                        <div className='card detail-card'>
-                            <table class="table ">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">er</th>
-                                        <th scope="col">User</th>
-                                        <th scope="col">date</th>
-                                        <th scope="col">Descriptin</th>
-                                        <th scope="col">Amount</th>
-                                        <th scope="col">Action</th>
-                                        <th scope="col">:</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
 
-                                            <input type="text" class="custom-control-input" id="customCheck1" checked />
-                                        </td>
-                                        <td>Oil and Gas</td>
-                                        <td>29-09-78</td>
-                                        <td>Bootstrap 4 CDN and Starter Template</td>
-                                        <td>2.846</td>
-                                        <td>Transfer</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
 
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
-                                        </td>
-                                        <td>Oil and Gas</td>
-                                        <td>29-09-78</td>
-                                        <td>Bootstrap 4 CDN and Starter Template</td>
-                                        <td>2.846</td>
-                                        <td>Transfer</td>
-                                        <td></td>
-                                    </tr>
+    async componentDidMount() {
+        console.log("Dashboard is mounted");
+        console.log(`${sessionStorage.getItem("tokenManager")}`)
+        let data = JSON.parse(sessionStorage.getItem("tokenManager"))
+        console.log(`data ----- ${data}`)
+        const requestOptions = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${data.token.token}`,
 
-                                    <tr>
-                                        <td>
+            },
+            // mode: 'no-cors',
+            // redirect: "follow",
+        };
 
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
-                                        </td>
-                                        <td>Oil and Gas</td>
-                                        <td>29-09-78</td>
-                                        <td>Bootstrap 4 CDN and Starter Template</td>
-                                        <td>2.846</td>
-                                        <td>Transfer</td>
-                                        <td></td>
-                                    </tr>
 
-                                    <tr>
-                                        <td>
+        await fetch(`https://credio-merchant.herokuapp.com/api/v1/credio_store/get/transactions`,
+            requestOptions)
+            .then(results => results.json()).then((transfer) => {
+                // let over = overview.json();
+                console.log(transfer);
 
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
-                                        </td>
-                                        <td>Oil and Gas</td>
-                                        <td>29-09-78</td>
-                                        <td>Bootstrap 4 CDN and Starter Template</td>
-                                        <td>2.846</td>
-                                        <td>Transfer</td>
-                                        <td></td>
-                                    </tr>
 
-                                </tbody>
-                            </table>
+                this.setState({
+                    data: transfer,
+                    isLoaded: true,
+                });
+
+
+            }).catch((err) => {
+                console.log(err);
+            });
+    }
+
+
+    render() {
+        // var history = useNavigate();
+        const { isLoaded, data, } = this.state;
+
+
+
+        return (
+            <div>
+                <Navbar ></Navbar>
+                <Sidebar index='transactions' ></Sidebar>
+
+                {!isLoaded ? (
+                    <div class="container h-100">
+                        <div class="row h-100 justify-content-center align-items-center">
+
+                            <FontAwesomeIcon
+                                className="spinner mt-6 mb-4"
+                                size="6x"
+                                icon={faSpinner}
+                            ></FontAwesomeIcon>
+
                         </div>
                     </div>
-                </div>
+
+
+                ) : (
+                    <div className='display-page'>
+                        <div className='dashboard-navbar'>
+                            <a style={{ marginLeft: "-2.5rem", fontWeight: "700" }} className='dashboard-nav'>Transactions Details</a>
+                            <button className='btn btn-outline-danger' >Invoices</button>
+                            <button className='btn btn-danger'>Make Payment</button>
+                        </div>
+                        <div className="row ">
+                            <div className='col-md-4'>
+                                <div className='today-button'>
+                                    <button className='btn btn-today'>Today
+                                        <span className='arrow'>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <ul className='stores'>
+                                    <li className='one-stores'>
+                                        <div className='card left-card'>
+                                            <div className='card-body'>
+                                                <div className='store-info'>
+                                                    <img className='store-dp' src={Store} />
+                                                    <div className='store-infos'>
+                                                        <span className='store-name'>Tony T store</span>
+                                                        <span className='store-balance'>$12435.65</span>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div className='row' style={{ marginTop: "0.5rem" }}>
+                                                    <div className='col-md-6 column-store'>
+                                                        <span className='deposit-text'>Deposit</span>
+                                                        <span className='deposit-text'>New Balance</span>
+                                                    </div>
+                                                    <div className='col-md-6 column-store'>
+                                                        <span className='balance'>-$5000.65</span>
+                                                        <span className='balance'>$900.65</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className='my-3 one-stores'>
+                                        <div className='card left-card'>
+                                            <div className='card-body'>
+                                                <div className='store-info'>
+                                                    <img className='store-dp' src={Store} />
+                                                    <div className='store-infos'>
+                                                        <span className='store-name'>Tony T store</span>
+                                                        <span className='store-balance'>$12435.65</span>
+                                                    </div>=
+                                                </div>
+                                                <hr />
+                                                <div className='row' style={{ marginTop: "0.5rem" }}>
+                                                    <div className='col-md-6 column-store'>
+                                                        <span className='deposit-text'>Deposit</span>
+                                                        <span className='deposit-text'>New Balance</span>
+                                                    </div>
+                                                    <div className='col-md-6 column-store'>
+                                                        <span className='balance'>-$5000.65</span>
+                                                        <span className='balance'>$900.65</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li className='my-3 one-stores'>
+                                        <div className='card left-card'>
+                                            <div className='card-body'>
+                                                <div className='store-info'>
+                                                    <img className='store-dp' src={Store} />
+                                                    <div className='store-infos'>
+                                                        <span className='store-name'>Tony T store</span>
+                                                        <span className='store-balance'>$12435.65</span>
+                                                    </div>=
+                                                </div>
+                                                <hr />
+                                                <div className='row' style={{ marginTop: "0.5rem" }}>
+                                                    <div className='col-md-6 column-store'>
+                                                        <span className='deposit-text'>Deposit</span>
+                                                        <span className='deposit-text'>New Balance</span>
+                                                    </div>
+                                                    <div className='col-md-6 column-store'>
+                                                        <span className='balance'>-$5000.65</span>
+                                                        <span className='balance'>$900.65</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className='col-md-8'>
+                                <div class="button-grp">
+                                    <button className='btn btn-deposit'>Deposit</button>
+                                    <button className='mx-2 btn btn-withdraw'>Withdraw</button>
+                                    <button className='mx-2 btn btn-advance'>Advance</button>
+                                    <button className='mx-5 btn btn-print'>Print</button>
+                                </div>
+                                <div className='card detail-card'>
+                                    <table class="table ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">er</th>
+                                                <th scope="col">User</th>
+                                                <th scope="col">date</th>
+                                                <th scope="col">Descriptin</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Action</th>
+                                                <th scope="col">:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+
+                                                    <input type="text" class="custom-control-input" id="customCheck1" checked />
+                                                </td>
+                                                <td>Oil and Gas</td>
+                                                <td>29-09-78</td>
+                                                <td>Bootstrap 4 CDN and Starter Template</td>
+                                                <td>2.846</td>
+                                                <td>Transfer</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
+                                                </td>
+                                                <td>Oil and Gas</td>
+                                                <td>29-09-78</td>
+                                                <td>Bootstrap 4 CDN and Starter Template</td>
+                                                <td>2.846</td>
+                                                <td>Transfer</td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
+                                                </td>
+                                                <td>Oil and Gas</td>
+                                                <td>29-09-78</td>
+                                                <td>Bootstrap 4 CDN and Starter Template</td>
+                                                <td>2.846</td>
+                                                <td>Transfer</td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
+                                                </td>
+                                                <td>Oil and Gas</td>
+                                                <td>29-09-78</td>
+                                                <td>Bootstrap 4 CDN and Starter Template</td>
+                                                <td>2.846</td>
+                                                <td>Transfer</td>
+                                                <td></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
-        </div >
 
-    )
+
+        )
+    }
 }
 
 
