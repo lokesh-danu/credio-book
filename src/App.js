@@ -14,6 +14,7 @@ import Users from "./components/users/users";
 // import { BrowserRouter as Router } from "react-router-dom";
 import Login from './components/Auth/Auth';
 import Settings from './components/setting/Setting';
+import Payment from './components/payment/Payment';
 
 
 function App() {
@@ -45,8 +46,11 @@ function App() {
           <Route path="/settings" element={<Settings />}>
 
           </Route>
+          <Route path="/payment" element={<Payment />}>
 
-          {/*  */}
+          </Route>
+
+          {/*   */}
           {/* <Route path="/balance">
                 <Balance />
               </Route> */}

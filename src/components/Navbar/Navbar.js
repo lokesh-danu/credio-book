@@ -59,25 +59,80 @@ const MobileComponent = () => {
         </div>
     );
 };
+// 
 
-const DesktopComponent = () => {
-    return (
-        <div>
-            <div className='top-navbar'>
-                <i class="fas fa-sliders-h nav-icon"></i>
-                <a class="navbar-brand">Your service </a>
-                <div class="input-group ">
-                    <input className='search-here' type="text" placeholder='Search' />
-                    {/* <i class="fas fa-search search-icon fa-sm" ></i> */}
+class DesktopComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.index = 0;
+        this.state = {
+            data: {},
+            isLoaded: false,
+        };
+
+    }
+
+
+
+    async componentDidMount() {
+        console.log("Dashboard is mounted");
+        console.log(`${sessionStorage.getItem("tokenManager")}`)
+        let data = JSON.parse(sessionStorage.getItem("tokenManager"))
+        console.log(`data ----- ${data}`)
+        const requestOptions = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "authorization": `Bearer ${data.token.token}`,
+
+            },
+            // mode: 'no-cors',
+            // redirect: "follow",
+        };
+
+
+        await fetch(`https://credio-merchant.herokuapp.com/api/v1/auth/getProfile`,
+            requestOptions)
+            .then(results => results.json()).then((transfer) => {
+                // let over = overview.json();
+                console.log(transfer);
+
+
+                this.setState({
+                    data: transfer,
+                    isLoaded: true,
+                });
+
+
+            }).catch((err) => {
+                console.log(err);
+            });
+    }
+
+
+    render() {
+        // var history = useNavigate();
+        const { isLoaded, data, } = this.state;
+
+
+
+        return (
+            <div>
+                <div className='top-navbar'>
+                    <i class="fas fa-sliders-h nav-icon"></i>
+                    <a class="navbar-brand">Your service </a>
+                    <div class="input-group ">
+                        <input className='search-here' type="text" placeholder='Search' />
+                        {/* <i class="fas fa-search search-icon fa-sm" ></i> */}
+                    </div>
+                    <i class="fas fa-circle"></i>
+                    <i class="far fa-bell"></i>
+                    <span className='user-name'>{isLoaded ? data.message.businessName : ''}</span>
                 </div>
-                <i class="fas fa-circle"></i>
-                <i class="far fa-bell"></i>
-                <span className='user-name'>Adewumi</span>
             </div>
-        </div>
-    )
+        )
+    }
 }
-
 
 const MyComponent = () => {
     const { width } = useViewport();

@@ -153,7 +153,7 @@ class DesktopComponent extends React.Component {
                         {
                           data.data.transaction.map((deposit, index) => {
 
-                            < li className={index == 0 ? '' : 'my-3'
+                            return < li className={index == 0 ? '' : 'my-3'
                             } >
                               <div className='card stores-card'>
                                 <div className='card-body'>
@@ -196,7 +196,7 @@ class DesktopComponent extends React.Component {
                         {
                           data.data.deposit.map((deposit, index) => {
 
-                            < li className={index == 0 ? '' : 'my-3'
+                            return < li className={index == 0 ? '' : 'my-3'
                             } >
                               <div className='card stores-card'>
                                 <div className='card-body'>
@@ -237,7 +237,7 @@ class DesktopComponent extends React.Component {
                         {
                           data.data.withdrawal.map((deposit, index) => {
 
-                            < li className={index == 0 ? '' : 'my-3'
+                            return < li className={index == 0 ? '' : 'my-3'
                             } >
                               <div className='card stores-card'>
                                 <div className='card-body'>
@@ -277,7 +277,7 @@ class DesktopComponent extends React.Component {
                         {
                           data.data.advance.map((deposit, index) => {
 
-                            < li className={index == 0 ? '' : 'my-3'
+                            return < li className={index == 0 ? '' : 'my-3'
                             } >
                               <div className='card stores-card'>
                                 <div className='card-body'>
@@ -317,7 +317,7 @@ class DesktopComponent extends React.Component {
                         {
                           data.data.user.map((deposit, index) => {
 
-                            < li className={index == 0 ? '' : 'my-3'
+                            return < li className={index == 0 ? '' : 'my-3'
                             } >
                               <div className='card stores-card'>
                                 <div className='card-body'>

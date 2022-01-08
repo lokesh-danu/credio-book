@@ -279,7 +279,7 @@ class DesktopComponent extends React.Component {
                         </div>
                         <div className="row ">
                             <div className='col-md-3'>
-                                <div className='today-button ms-4 mt-3 pe-4'>
+                                <div className='today-button mx-4 mt-3'>
                                     <button className='btn btn-today'>Today
                                         <span className='arrow'>
                                             <i class="fas fa-chevron-down"></i>
@@ -320,6 +320,7 @@ class DesktopComponent extends React.Component {
                                     }
                                 </ul>
                             </div>
+
                             <div className='col-md-9'>
                                 <div class="button-grp">
                                     <button className='btn btn-deposit'>Deposit</button>

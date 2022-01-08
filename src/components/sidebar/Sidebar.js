@@ -83,7 +83,7 @@ class DesktopComponent extends Component {
                     <Link to="/new/user" style={{ textDecoration: 'none' }} > <div className={this.props.index == 'create' ? ' active-create create-user' : 'create-user'}>
                         <span className={'create-user-text  d-flex justify-content-center'}>+ Create Users</span>
                     </div> </Link>
-                    <ul className='sidebar-menu-items'>
+                    <ul className='sidebar-menu-items pt-4'>
                         <Link to="/dashboard" style={{ textDecoration: 'none' }}>
                             <li className={this.props.index == 'dashboard' ? 'sidebar-menu-item active' : 'sidebar-menu-item'}>
                                 <img src={Dash} alt="" />
