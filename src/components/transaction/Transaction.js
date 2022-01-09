@@ -341,7 +341,7 @@ class DesktopComponent extends React.Component {
                                     <table class="table ">
                                         <thead>
                                             <tr>
-                                                <th scope="col">er</th>
+                                                <th scope="col"></th>
                                                 <th scope="col">User</th>
                                                 <th scope="col">date</th>
                                                 <th scope="col">Descriptin</th>
@@ -354,7 +354,7 @@ class DesktopComponent extends React.Component {
                                             <tr>
                                                 <td>
 
-                                                    <input type="text" class="custom-control-input" id="customCheck1" checked />
+                                                    <input type="text" class="" id="customCheck1" checked />
                                                 </td>
                                                 <td>Oil and Gas</td>
                                                 <td>29-09-78</td>
@@ -366,7 +366,7 @@ class DesktopComponent extends React.Component {
                                             <tr>
                                                 <td>
 
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
+                                                    <input type="checkbox" checked />
                                                 </td>
                                                 <td>Oil and Gas</td>
                                                 <td>29-09-78</td>
@@ -378,8 +378,7 @@ class DesktopComponent extends React.Component {
 
                                             <tr>
                                                 <td>
-
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
+                                                    <input type="checkbox" class="" id="customCheck1" checked />
                                                 </td>
                                                 <td>Oil and Gas</td>
                                                 <td>29-09-78</td>
