@@ -290,7 +290,7 @@ class DesktopComponent extends React.Component {
                         </div>
                         <div className="row ">
                             <div className='col-md-3'>
-                                <div className='today-button mx-4 mt-3'>
+                                <div className='today-button mx-4 mt-4'>
                                     <button className='btn btn-today'>Today
                                         <span className='arrow'>
                                             <i class="fas fa-chevron-down"></i>
@@ -298,9 +298,7 @@ class DesktopComponent extends React.Component {
                                     </button>
                                 </div>
                                 <ul className='stores'>
-
                                     {
-
                                         data.data.map((item) => {
                                             return <li className='' >
                                                 <div className='card left-card'>

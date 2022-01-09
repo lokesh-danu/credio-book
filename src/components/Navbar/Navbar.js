@@ -118,7 +118,7 @@ class DesktopComponent extends React.Component {
 
         return (
             <div>
-                <div className='top-navbar'>
+                <div className='top-navbar d-flex justify-content-between'>
                     <i class="fas fa-sliders-h nav-icon"></i>
                     <a class="navbar-brand">Your service </a>
                     <div class="input-group ">
