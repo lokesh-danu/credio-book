@@ -70,7 +70,7 @@ const DesktopComponent = () => {
                             </div>
                             <div className='col-md-8'>
                                 <input type="text" placeholder='$0.00' className='amount-input' />
-                                <button className='btn btn-danger'>Make a Payment</button>
+                                <button className='btn btn-danger' >Make a Payment</button>
                                 <div class="button-grp my-1">
                                     <button className='btn btn-deposit'>Deposit</button>
                                     <button className='mx-2 btn btn-withdraw'>Withdraw</button>
