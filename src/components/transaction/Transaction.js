@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
+
 const viewportContext = React.createContext({});
 
 const ViewportProvider = ({ children }) => {
@@ -196,6 +197,15 @@ const MobileComponent = () => {
 }
 
 class DesktopComponent extends React.Component {
+
+    handleClick(e) {
+        e.preventDefault();
+        this.props.history('/invoice');
+    }
+    paymentClick(e) {
+        e.preventDefault();
+        this.props.history('/payment');
+    }
     constructor(props) {
         super(props);
         this.index = 0;
@@ -203,7 +213,8 @@ class DesktopComponent extends React.Component {
             data: {},
             isLoaded: false,
         };
-
+        this.handleClick = this.handleClick.bind(this);
+        this.paymentClick = this.paymentClick.bind(this);
     }
 
 
@@ -274,8 +285,8 @@ class DesktopComponent extends React.Component {
                     ) : (<div>
                         <div className='dashboard-navbar'>
                             <a style={{ marginLeft: "-2.5rem", fontWeight: "700" }} className='dashboard-nav'>Transactions Details</a>
-                            <button className='btn btn-outline-danger' >Invoices</button>
-                            <button className='btn btn-danger'>Make Payment</button>
+                            <button className='btn btn-outline-danger' onClick={this.handleClick} >Invoices</button>
+                            <button className='btn btn-danger' onClick={this.paymentClick}>Make Payment</button>
                         </div>
                         <div className="row ">
                             <div className='col-md-3'>
@@ -402,7 +413,7 @@ class DesktopComponent extends React.Component {
                     )
                     }
                 </div>
-            </div>
+            </div >
 
 
         )
@@ -411,10 +422,11 @@ class DesktopComponent extends React.Component {
 
 
 const MyComponent = () => {
+    const history = useNavigate();
     const { width } = useViewport();
     const breakpoint = 620;
 
-    return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
+    return width < breakpoint ? <MobileComponent /> : <DesktopComponent history={history} />;
 };
 
 export default function Transaction() {

@@ -26,6 +26,10 @@ border-radius: 5.74501px;
     justify-content: center;
     color: #000000;
 }
+.spinner {
+    animation: spin infinite 2s linear;
+  }
+  
 .line{
     width: 180px;
     display: flex;

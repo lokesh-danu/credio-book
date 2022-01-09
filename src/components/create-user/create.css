@@ -21,6 +21,11 @@ h3{
     font-weight: 600;
     color: black;
 }
+
+.spinner {
+    animation: spin infinite 2s linear;
+  }
+  
 .business-details{
     display: flex;
     flex-direction: row;

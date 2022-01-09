@@ -19,7 +19,6 @@ import Payment from './components/payment/Payment';
 
 function App() {
 
-
   return (
     <React.StrictMode>
       <Router>
@@ -28,7 +27,9 @@ function App() {
           <Route exact path="/" element={<Login />} >
 
           </Route>
-          <Route exact path="/transactions" element={<Transaction />}>
+          <Route exact path="/transactions" element={
+            <Transaction />
+          }>
 
           </Route>
           <Route path="/dashboard" element={<Dashboard />}>

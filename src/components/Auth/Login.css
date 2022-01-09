@@ -97,6 +97,10 @@ body {
     font-weight: 300;
   }
   
+  .spinner {
+    animation: spin infinite 2s linear;
+  }
+  
   input,
   textarea {
     padding: 10px 12px 10px 12px;

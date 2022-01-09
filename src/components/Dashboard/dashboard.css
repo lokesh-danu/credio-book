@@ -29,6 +29,10 @@
     left: 8%;
     top: 4%;
 }
+.spinner {
+    animation: spin infinite 2s linear;
+  }
+  
 .btn-danger{
     position: absolute;
     top: 3%;

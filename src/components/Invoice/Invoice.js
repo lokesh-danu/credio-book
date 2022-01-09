@@ -83,7 +83,7 @@ const DesktopComponent = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <SideBar ></SideBar>
+            <SideBar index="transactions"></SideBar>
             <div className='display-page'>
                 <div className='dashboard-navbar'>
                     <a href="" className='dashboard-nav'>Invoice</a>
@@ -299,7 +299,7 @@ const DesktopComponent = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

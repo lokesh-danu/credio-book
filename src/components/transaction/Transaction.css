@@ -29,6 +29,10 @@
     position: relative;
     top: 22%;
 }
+.spinner {
+    animation: spin infinite 2s linear;
+  }
+  
 .left-card{
     /* width: 250px; */
     height: 150px;
