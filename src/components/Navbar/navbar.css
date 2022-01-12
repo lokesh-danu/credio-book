@@ -1,0 +1,178 @@
+.top-navbar{
+    position: absolute;
+    left: 230px;
+    top: 0px;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #E5E5E5;
+}
+.navbar-menu{
+    position: absolute;
+    top: 35%;
+    left: 35px;
+}
+.nav-icon{
+    position: absolute;
+    top: 28%;
+    left: 1.5%;
+    color: #861F41;
+}
+.navbar-brand{
+    position: absolute;
+    top: 25%;
+    left: 6%;
+    color: #424242;
+    font-size: 19px;
+    line-height: 27px;
+}
+.input-group{
+    width: 300px;
+    height: 40px;
+    /* border: 1px solid #424242; */
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    border-radius: 30px;
+}
+.search-here{
+    width: 300px;
+    color: #2c2b2b;
+    height: 40px;
+    border-radius: 30px;
+    border: 0.1% solid #2c2b2b;
+    border-radius: 30px;
+    margin-left: -0.1rem;
+    margin-top: -0.1rem;
+}
+.search-icon{
+   position: absolute;
+   right: 15%;
+   border-radius: 30px;
+   top: 25%;
+   color: #6b6666;
+}
+.fa-bell{
+    color: #424242;
+}
+.notification-icon{
+    position: absolute;
+    left: 68%;
+    top: 28%;
+}
+.notification-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #BC0018;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    left: -8px;
+}
+.fa-circle{
+    color: #707070;
+    position: absolute;float: right;
+    left: 72%;
+    top: 28%;
+}
+.user-name{
+    position: absolute;
+    top: 28%;
+    left: 75%;
+    float: right;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #707070;
+}
+
+@media (min-width:1199px) and (max-width:1399px) {
+    .top-navbar{
+        width: 82%;
+    }
+    .input-group{
+        position: absolute;
+        left: 30%;
+    }
+    .fa-bell{
+        position: absolute;
+        left: 70%;
+    }
+    .fa-circle{
+        position: absolute;
+        left: 75%;
+    }
+    .user-name{
+        position: absolute;
+        left: 80%;
+    }
+}
+@media (min-width:990px) and (max-width:1199px) {
+    .top-navbar{
+        width: 79%;
+    }
+    .input-group{
+        position: absolute;
+        left: 30%;
+    }
+    .fa-bell{
+        position: absolute;
+        left: 70%;
+    }
+    .fa-circle{
+        position: absolute;
+        left: 75%;
+    }
+    .user-name{
+        position: absolute;
+        left: 80%;
+    }
+}
+
+/*MOBILE VIEW*/
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #E5E5E5;
+    height: 100%;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background: #BC0018;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: #BC0018;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: #BC0018;
+    color: white;
+  }
