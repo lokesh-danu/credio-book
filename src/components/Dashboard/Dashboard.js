@@ -10,16 +10,16 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  BarElement, PointElement as Point, LineElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import faker from 'faker';
 
 ChartJS.register(
-  CategoryScale,
+  CategoryScale, Point, LineElement,
   LinearScale,
   BarElement,
   Title,
@@ -34,8 +34,8 @@ export const options = {
       position: 'top',
     },
     title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
+      display: !true,
+      text: 'Crediometer',
     },
   },
 };
@@ -49,6 +49,8 @@ export const dataSet = {
       label: 'Cash flow',
       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      tension: 0.5, fill: 1,
+
     },
 
   ],
@@ -183,7 +185,7 @@ class DesktopComponent extends React.Component {
                   <div className='card transaction-card'>
                     <div className='card-body'>
                       <h5 className='card-title'>Cash Flow</h5>
-                      <Bar options={options} data={dataSet} />
+                      <Line options={options} data={dataSet} />
                     </div>
                   </div>
                 </div>

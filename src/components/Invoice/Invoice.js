@@ -139,7 +139,6 @@ class DesktopComponent extends React.Component {
             });
     }
 
-
     render() {
         const { isLoaded, data, } = this.state;
 
