@@ -1,7 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
-import Sidebar from '../sidebar/Sidebar';
+import Menu from "../../image/Menu.png";
 
 const viewportContext = React.createContext({});
 
@@ -59,80 +59,35 @@ const MobileComponent = () => {
         </div>
     );
 };
-// 
 
-class DesktopComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.index = 0;
-        this.state = {
-            data: {},
-            isLoaded: false,
-        };
-
-    }
-
-
-
-    async componentDidMount() {
-        console.log("Dashboard is mounted");
-        console.log(`${sessionStorage.getItem("tokenManager")}`)
-        let data = JSON.parse(sessionStorage.getItem("tokenManager"))
-        console.log(`data ----- ${data}`)
-        const requestOptions = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "authorization": `Bearer ${data.token.token}`,
-
-            },
-            // mode: 'no-cors',
-            // redirect: "follow",
-        };
-
-
-        await fetch(`https://credio-merchant.herokuapp.com/api/v1/auth/getProfile`,
-            requestOptions)
-            .then(results => results.json()).then((transfer) => {
-                // let over = overview.json();
-                console.log(transfer);
-
-
-                this.setState({
-                    data: transfer,
-                    isLoaded: true,
-                });
-
-
-            }).catch((err) => {
-                console.log(err);
-            });
-    }
-
-
-    render() {
-        // var history = useNavigate();
-        const { isLoaded, data, } = this.state;
-
-
-
-        return (
-            <div>
-                <div className='top-navbar d-flex justify-content-between'>
-                    <i class="fas fa-sliders-h nav-icon"></i>
-                    <a class="navbar-brand">Your service </a>
-                    <div class="input-group ">
-                        <input className='search-here' type="text" placeholder='Search' />
-                        {/* <i class="fas fa-search search-icon fa-sm" ></i> */}
-                    </div>
-                    <i class="fas fa-circle"></i>
-                    <i class="far fa-bell"></i>
-                    <span className='user-name'>{isLoaded ? data.message.businessName : ''}</span>
+const DesktopComponent = () => {
+    return (
+        <div>
+            <div className='top-navbar'>
+                <img src={Menu} alt="" className='navbar-menu' />
+                <a class="navbar-brand">Your service </a>
+                <i style={{
+                    position: "absolute",
+                    top: "40%",
+                    left: "14%",
+                    fontSize: "15px",
+                    color: "#424242"
+                }} class="fas fa-chevron-down"></i>
+                <div class="input-group ">
+                    <input className='search-here' type="text" placeholder='Search' />
+                    {/* <i class="fas fa-search search-icon fa-sm" ></i> */}
                 </div>
+                <div className='notification-icon'>
+                    <i class="far fa-bell"></i>
+                    <div className='notification-dot'></div>
+                </div>
+                <i class="fas fa-circle"></i>
+                <span className='user-name'>Adewumi</span>
             </div>
-        )
-    }
+        </div>
+    )
 }
+
 
 const MyComponent = () => {
     const { width } = useViewport();

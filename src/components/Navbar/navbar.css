@@ -7,6 +7,11 @@
     height: 80px;
     border: 1px solid #E5E5E5;
 }
+.navbar-menu{
+    position: absolute;
+    top: 35%;
+    left: 35px;
+}
 .nav-icon{
     position: absolute;
     top: 28%;
@@ -27,13 +32,12 @@
     /* border: 1px solid #424242; */
     position: absolute;
     top: 20%;
-    left: 55%;
+    left: 45%;
     border-radius: 30px;
 }
 .search-here{
     width: 300px;
     color: #2c2b2b;
-
     height: 40px;
     border-radius: 30px;
     border: 0.1% solid #2c2b2b;
@@ -50,25 +54,36 @@
 }
 .fa-bell{
     color: #424242;
+}
+.notification-icon{
     position: absolute;
-    right: 8%;
+    left: 68%;
     top: 28%;
 }
-
-
+.notification-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #BC0018;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    left: -8px;
+}
 .fa-circle{
     color: #707070;
     position: absolute;float: right;
-    right: 6%;
+    left: 72%;
     top: 28%;
 }
 .user-name{
     position: absolute;
     top: 28%;
-    right: 1%;
+    left: 75%;
     float: right;
     font-size: 19px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 27px;
     color: #707070;
 }
