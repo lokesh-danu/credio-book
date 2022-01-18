@@ -85,3 +85,16 @@ Link{
     line-height: 27px;
     text-decoration: none;
 }
+
+/* mobile css */
+.mobile-side-bar{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    min-width: 50px;
+}
+.mobile-side-bar .btn{
+    position: absolute;
+    right: 0px;
+    z-index: 6;
+}
