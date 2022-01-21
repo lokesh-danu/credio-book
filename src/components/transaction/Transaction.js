@@ -39,12 +39,11 @@ const useViewport = () => {
 const MobileComponent = () => {
     return (
         <div>
-            <Sidebar index='transactions' ></Sidebar>
             <div className='mobile-display' style={{ background: "#ffffff" }}>
                 <div className='mobile-upper-card'>
                     <div className='card-body' style={{ display: 'flex', flexDirection: "row" }}>
                         <div className="dropdown">
-                            <button style={{ marginTop: "-1rem",marginLeft:"0.5rem" }} className="btn card-titles dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button style={{ marginTop: "-1rem" }} className="btn card-titles dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Today
                             </button>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

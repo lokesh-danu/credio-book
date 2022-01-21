@@ -40,7 +40,6 @@ const useViewport = () => {
 const MobileComponent = () => {
   return (
     <div>
-      <SideBar index='users'></SideBar>
       <div className='mobile-display'>
         <div className='mobile-view-heading'>
           <span className='dashboard-heading-text'>Cash Flow</span>
