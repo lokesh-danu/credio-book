@@ -87,8 +87,10 @@ const useViewport = () => {
 const MobileComponent = () => {
   return (
     <div>
+      <NavBar navIndex="Credio services"></NavBar>
       <div className='mobile-display'>
-        <div className='mobile-view-heading'>
+        <div className=''>    
+        {/* deleted class mobile-view-heading it was declared in create.css */}
           <span className='dashboard-heading-text'>Cash Flow</span>
         </div>
         <div className='container my-5 py-2'>

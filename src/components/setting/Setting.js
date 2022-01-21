@@ -2,6 +2,7 @@ import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Setting.css";
 import Store from "../../image/Store.png";
+import Navbar from '../Navbar/Navbar';
 
 const viewportContext = React.createContext({});
 
@@ -34,6 +35,7 @@ const useViewport = () => {
 const MobileComponent = () => {
     return (
         <div>
+            <Navbar navIndex={"Credio services"}></Navbar>
             <div className='mobile-display' style={{ background: "White" }}>
                 <ul className='setting-items my-3'>
                     <span className='setting-item-heading my-2'>Customers</span>

@@ -39,6 +39,7 @@ const useViewport = () => {
 const MobileComponent = () => {
     return (
         <div>
+            <Navbar navIndex={"Transactions Overview"}></Navbar>
             <div className='mobile-display' style={{ background: "#ffffff" }}>
                 <div className='mobile-upper-card'>
                     <div className='card-body' style={{ display: 'flex', flexDirection: "row" }}>
