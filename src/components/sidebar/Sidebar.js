@@ -40,16 +40,11 @@ const useViewport = () => {
     return { width, height };
 };
 
-const MobileComponent = (props) => {
-    const index = props.index;
+const MobileComponent = () => {
     return (
-        < div className='mobile-side-bar' >
-            <button className="btn " type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div className="collapse collapse-horizontal" id="sidebar" >
-                <DesktopComponent index={index} />
-            </div>
+
+        < div >
+
         </div >
 
     )
@@ -128,7 +123,7 @@ const MyComponent = ({ index }) => {
     const { width } = useViewport();
     const breakpoint = 620;
 
-    return width < breakpoint ? <MobileComponent index={index}/> : <DesktopComponent index={index} />;
+    return width < breakpoint ? <MobileComponent /> : <DesktopComponent index={index} />;
 };
 
 export default function Sidebar({ index }) {

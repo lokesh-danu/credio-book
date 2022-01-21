@@ -87,14 +87,13 @@ const useViewport = () => {
 const MobileComponent = () => {
   return (
     <div>
-      {/* <NavBar></NavBar> */}
-      <SideBar index="dashboard"></SideBar>
       <div className='mobile-display'>
         <div className='mobile-view-heading'>
           <span className='dashboard-heading-text'>Cash Flow</span>
         </div>
         <div className='container my-5 py-2'>
           <div className='mobile-cash-flow-card'>
+
           </div>
           <div className='current-cash-card my-3'>
             <div className='card-body' style={{ display: "flex", flexDirection: "column" }}>

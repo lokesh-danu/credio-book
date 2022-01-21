@@ -1,7 +1,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
-// import Menu from "../../image/Menu.png";
+import Menu from "../../image/Menu.png";
 
 const viewportContext = React.createContext({});
 
@@ -64,7 +64,7 @@ const DesktopComponent = () => {
     return (
         <div>
             <div className='top-navbar'>
-                {/* <img src={Menu} alt="" className='navbar-menu' /> */}
+                <img src={Menu} alt="" className='navbar-menu' />
                 <a class="navbar-brand">Your service </a>
                 <i style={{
                     position: "absolute",
