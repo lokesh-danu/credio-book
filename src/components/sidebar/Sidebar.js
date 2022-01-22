@@ -40,11 +40,38 @@ const useViewport = () => {
     return { width, height };
 };
 
-const MobileComponent = () => {
+const MobileComponent = (props) => {
+    const index=props.index;
     return (
-
         < div >
-
+            <div  className="sidebar-cnt-mobile" >
+                <div className={index == 'dashboard' ? 'sidebar-active-mobile sidebar-item-mobile' : 'sidebar-item-mobile'}>
+                    <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                        <div >
+                            <img src={Dash} alt="" />
+                            <span >Dashboard</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className={index == 'transactions' ? 'sidebar-active-mobile sidebar-item-mobile' : 'sidebar-item-mobile'}>
+                    <Link to="/transactions" style={{ textDecoration: 'none' }}>
+                        <div >
+                            <img src={Trans} alt="" />
+                            <span >Transactions</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className={index == 'settings' ? 'sidebar-active-mobile sidebar-item-mobile' : 'sidebar-item-mobile'}>
+                    <Link to="/settings"
+                    //  onClick={this.showModal} 
+                     style={{ textDecoration: 'none' }}>
+                        <div >
+                            <img src={Set} alt="" />
+                            <span >Settings</span>
+                        </div>
+                    </Link>
+                </div>
+            </div>
         </div >
 
     )
@@ -123,7 +150,7 @@ const MyComponent = ({ index }) => {
     const { width } = useViewport();
     const breakpoint = 620;
 
-    return width < breakpoint ? <MobileComponent /> : <DesktopComponent index={index} />;
+    return width < breakpoint ? <MobileComponent index={index}/> : <DesktopComponent index={index} />;
 };
 
 export default function Sidebar({ index }) {

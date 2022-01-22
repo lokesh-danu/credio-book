@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Setting.css";
 import Store from "../../image/Store.png";
 import Navbar from '../Navbar/Navbar';
+import Sidebar from '../sidebar/Sidebar';
 
 const viewportContext = React.createContext({});
 
@@ -36,6 +37,7 @@ const MobileComponent = () => {
     return (
         <div>
             <Navbar navIndex={"Credio services"}></Navbar>
+            {/* <Sidebar index={"settings"}></Sidebar> */}
             <div className='mobile-display' style={{ background: "White" }}>
                 <ul className='setting-items my-3'>
                     <span className='setting-item-heading my-2'>Customers</span>

@@ -40,6 +40,7 @@ const MobileComponent = () => {
     return (
         <div>
             <Navbar navIndex={"Transactions Overview"}></Navbar>
+            <Sidebar index='transactions' ></Sidebar>
             <div className='mobile-display' style={{ background: "#ffffff" }}>
                 <div className='mobile-upper-card'>
                     <div className='card-body' style={{ display: 'flex', flexDirection: "row" }}>

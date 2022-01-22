@@ -85,3 +85,37 @@ Link{
     line-height: 27px;
     text-decoration: none;
 }
+/* mobile-css */
+.sidebar-cnt-mobile{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+.sidebar-item-mobile{
+    padding: 5px;
+    width: 30vw;
+    height: 10vh;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s; 
+}
+.sidebar-item-mobile img{
+    display: block;
+    margin: 0 auto;
+}
+.sidebar-item-mobile span{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 27px;
+}
+.sidebar-active-mobile{
+    color:  #BC0018;
+    transform: scale(1.15);
+    /* border: 1px solid #BC0018; */
+}

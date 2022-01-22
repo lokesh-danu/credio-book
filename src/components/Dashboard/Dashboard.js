@@ -88,6 +88,7 @@ const MobileComponent = () => {
   return (
     <div>
       <NavBar navIndex="Credio services"></NavBar>
+      <SideBar index="dashboard" ></SideBar>
       <div className='mobile-display'>
         <div className=''>    
         {/* deleted class mobile-view-heading it was declared in create.css */}
