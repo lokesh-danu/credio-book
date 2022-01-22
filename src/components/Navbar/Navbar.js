@@ -36,7 +36,10 @@ const MobileComponent = (props) => {
     return (
         <div>
             <div className='mobile-navbar'>
-                    <button className="btn " type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+                    <button className="btn " type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar"
+                    
+                    >
                         <i class="fa fa-bars"></i>
                     </button>
                     <div id="navbar-index">

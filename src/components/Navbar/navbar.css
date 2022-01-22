@@ -146,13 +146,15 @@
     background-color: white;
     height: 100vh;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 28px;
+    box-shadow: 7px 13px 19px grey;
 }
 #side-menu-cnt div{
     display: flex;
     flex-direction: column;
-    height: 40vh;
+    height: 258px;
     justify-content: space-around;
+    font-weight: 300;
 }
 #side-menu-cnt #mobile-signout{
     position: absolute;
@@ -167,5 +169,5 @@
     padding: 1.2vh;
 }
 .mobile-navbar #mobile-notification-icon{
-    padding: 1.2vh;
+    padding: 1.6vh;
 }

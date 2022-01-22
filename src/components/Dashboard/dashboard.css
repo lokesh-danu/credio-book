@@ -167,11 +167,55 @@ li{
 }
 
 /*MOBILE VIEW*/
+.dashboard-mobile-cnt{
+    background-color: white;
+    min-height: 93vh;
+    width: 100vw;
+    height: fit-content;
+    position: absolute;
+    top: 7vh;
+    z-index: -1;
+}
 .dashboard-heading-text{
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
     color: #2C2C2E;
+    padding: 20px 30px;
+}
+.dashboard-mobile-chart{
+    padding: 10px 10px;
+    border: 1px solid #DADADA;
+    margin: 0 10px;
+    border-radius: 5px;
+    height: 50vh;
+
+}
+#mobile-graph{
+    height: 45vh !important;
+}
+.dashboard-mobile-btn-cnt{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 13px 0;
+}
+.quarter-btn{
+    color: #BC0018;
+    background-color: white;
+    border: 1.75px solid red;
+    border-radius: 12px;
+    width: 23vw;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    height: 35px;
+}
+.dashboard-mobile-active{
+    background-color: #BC0018;
+    color: white;
+}
+.quarter-btn p{
+    margin-block-end: 0;
 }
 .mobile-cash-flow-card{
     width:100%;
@@ -191,7 +235,7 @@ li{
 }
 .current-cash-amount{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     line-height: 22px;
     color: #707070;
 }

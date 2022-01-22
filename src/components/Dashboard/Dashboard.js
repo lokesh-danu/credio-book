@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./dashboard.css";
 import Store from "../../image/Store.png";
@@ -17,6 +17,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import faker from 'faker';
+import {Link } from 'react-router-dom';
 
 ChartJS.register(
   CategoryScale, Point, LineElement,
@@ -85,19 +86,43 @@ const useViewport = () => {
 };
 
 const MobileComponent = () => {
+  const [mobileQuarter, setMobileQuarter] = useState(1);
   return (
     <div>
       <NavBar navIndex="Credio services"></NavBar>
       <SideBar index="dashboard" ></SideBar>
-      <div className='mobile-display'>
-        <div className=''>    
-        {/* deleted class mobile-view-heading it was declared in create.css */}
-          <span className='dashboard-heading-text'>Cash Flow</span>
-        </div>
-        <div className='container my-5 py-2'>
-          <div className='mobile-cash-flow-card'>
 
-          </div>
+      <div className='dashboard-mobile-cnt'>
+        <div className='dashboard-heading-text'>    
+          <span >Cash Flow</span>
+        </div>
+        <div className="dashboard-mobile-chart">
+        <Line id="mobile-graph" options={options} data={dataSet} />
+
+        </div>
+        <div className="dashboard-mobile-btn-cnt">
+          <Link to="#">
+            <button className={mobileQuarter===1 ? "quarter-btn dashboard-mobile-active":"quarter-btn"} >
+              <p>1<sup>st </sup>Quarter</p>
+            </button>
+          </Link>
+          <Link to="#">
+            <button className={mobileQuarter===2 ? "quarter-btn dashboard-mobile-active":"quarter-btn"} >
+              <p>2<sup>nd </sup>Quarter</p>
+            </button>
+          </Link>
+          <Link to="#">
+            <button className={mobileQuarter===3 ? "quarter-btn dashboard-mobile-active":"quarter-btn"} >
+              <p>3<sup>rd </sup>Quarter</p>
+            </button>
+          </Link>
+          <Link to="#">
+            <button className={mobileQuarter===4 ? "quarter-btn active":"quarter-btn"} >
+              <p>4<sup>th </sup>Quarter</p>
+            </button>
+          </Link>
+        </div>
+        <div className='container '>
           <div className='current-cash-card my-3'>
             <div className='card-body' style={{ display: "flex", flexDirection: "column" }}>
               <span className='current-cash-amount'>$35000</span>

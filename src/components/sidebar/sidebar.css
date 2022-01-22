@@ -92,6 +92,7 @@ Link{
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    z-index: 10;
 }
 .sidebar-item-mobile{
     padding: 5px;
@@ -103,7 +104,8 @@ Link{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform .2s; 
+    transition: transform .2s;
+    box-shadow: -3px 2px 12px grey 
 }
 .sidebar-item-mobile img{
     display: block;
