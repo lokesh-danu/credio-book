@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const viewportContext = React.createContext({});
 
@@ -191,7 +192,9 @@ const MobileComponent = () => {
                             </ul>
                         </div>
                     </div>
+                    <Link to ="/payment">
                     <button className="btn make-payment mx-3">Make a Payment</button>
+                    </Link>
                 </div>
             </div>
         </div>

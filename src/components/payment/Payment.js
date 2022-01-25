@@ -35,7 +35,31 @@ const useViewport = () => {
 
 const MobileComponent = () => {
     return (
-        <></>
+        <div>
+            <Navbar navIndex="Payment Detail"></Navbar>
+            <Sidebar index="transactions" ></Sidebar>
+            <div className="payment-cnt-mobile">
+                <div class="dropdown payment-item-mobile">
+                    <button class="dropdown-toggle" type="button" id="payment-type-mobile" data-bs-toggle="dropdown" aria-expanded="false">
+                        Payment-type
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="payment-type-mobile">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div className='payment-item-mobile' id="amount-mobile ">
+                    <span>Amount</span>
+                    <input type="text" placeholder='0.00' />
+                </div>
+                <div className="payment-item-mobile">
+                    <button id="deposit-mobile">
+                        Make a Deposite
+                    </button>
+                </div>
+            </div>
+        </div>
     )
 }
 

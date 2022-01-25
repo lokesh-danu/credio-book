@@ -43,9 +43,6 @@ const MobileComponent = () => {
     return (
         <div>
             <div className='mobile-display'>
-                
-
-
                 <div className="create-user-form" style={{ visibility: "hidden" }}>
                     <div className='mobile-view-heading'>
                         <span className='business-detail-heading'>Business detail</span>
