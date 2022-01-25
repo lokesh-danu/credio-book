@@ -170,7 +170,7 @@ const MobileComponent = () => {
                                 <li className="column-text my-5">$690</li>
                             </ul>
                         </div>
-                        <div className='col-sm-5 mx-4'>
+                        <div className='col-sm-5 mx-4' style={{ marginLeft: "0rem" }}>
                             <span className="column-heading">Date</span>
                             <ul style={{ marginLeft: "-1.5rem" }}>
                                 <li className="column-text my-5">1-10-2021</li>

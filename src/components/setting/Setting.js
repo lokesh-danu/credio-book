@@ -4,6 +4,7 @@ import "./Setting.css";
 import Store from "../../image/Store.png";
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../sidebar/Sidebar';
+import { Link } from 'react-router-dom';
 
 const viewportContext = React.createContext({});
 
@@ -37,6 +38,126 @@ const MobileComponent = () => {
     return (
         <div>
             <Navbar navIndex={"Credio services"}></Navbar>
+            {/* <Sidebar index={"settings"}></Sidebar> */}
+            <div id="settings-cnt-mobile">
+                <div className="settings-section-mobile">
+                    <div className="settings-heading-mobile">
+                        <span>Customers</span>
+                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                    <div className="settings-item-mobile">
+                       <span>Account and setting</span> 
+                    </div>
+                    </Link>
+                    <Link to="/users" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Manage users</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>
+                        
+                    <div className="settings-item-mobile">
+                        <span>Custom form styles</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Chart of accounts</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Credio labs</span>
+                    </div>
+                    </Link>
+                </div>
+                <hr />
+                <div className="settings-section-mobile">
+                <div className="settings-heading-mobile">
+                        <span>Vendors</span>
+                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>All lists</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Products and services</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Recurring transactions</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Attachments</span>
+                    </div>
+                    </Link>
+                </div>
+                <hr />
+                <div className="settings-section-mobile">
+                <div className="settings-heading-mobile">
+                        <span>Employess</span>
+                    </div>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Oredr chechs</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Import data</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Import desktop data</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Export data</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Reconcile</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Budgeting</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Audit log</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>SmartLook</span>
+                    </div>
+                    </Link>
+                    <Link to="#" style={{ textDecoration: 'none' }}>    
+                    <div className="settings-item-mobile">
+                        <span>Case Center</span>
+                    </div>
+                    </Link>
+                </div>
+                <hr />
+            </div>
+        </div>
+    )
+}
+
+const DesktopComponent = () => {
+    return (
+        <div>
+            {/* <Navbar navIndex={"Credio services"}></Navbar> */}
             {/* <Sidebar index={"settings"}></Sidebar> */}
             <div className='mobile-display' style={{ background: "White" }}>
                 <ul className='setting-items my-3'>
@@ -88,12 +209,6 @@ const MobileComponent = () => {
     )
 }
 
-const DesktopComponent = () => {
-    return (
-        <></>
-    )
-}
-
 
 const MyComponent = () => {
     const { width } = useViewport();
@@ -104,6 +219,8 @@ const MyComponent = () => {
 
 export default function Setting() {
     return (
-        <MobileComponent />
+        <ViewportProvider>
+            <MyComponent />
+        </ViewportProvider>
     );
 }
