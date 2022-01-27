@@ -87,33 +87,3 @@ h3{
 }
 
 /*User*/
-.users-card{
-    width: 320px;
-    height: 180px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-.user-bank-detail{
-    display: flex;
-    flex-direction: column;
-}
-.user-bank-name{
-    display: flex;
-    flex-direction: row;
-}
-.bank-heading{
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    color: #2C2C2E;
-}
-.fa-university{
-    color: #707070;
-}
-.bank-name{
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 32px;
-    color: #707070;
-}

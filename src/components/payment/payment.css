@@ -22,3 +22,42 @@
     box-sizing: border-box;
     border-radius: 5px;
 }
+/* mobile css */
+.payment-cnt-mobile{
+    background-color: white;
+    min-height: 93vh;
+    max-height: fit-content;
+    width: 100vw;
+    position: absolute;
+    top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+#payment-type-mobile{
+    background-color: white;
+    color: #BC0018;
+    border: 1.5px solid #BC0018;
+    width: 90vw;
+    height: 2.5rem;
+    text-align: left;
+    padding: 0.1rem 0.7rem;
+    font-weight: 600;
+    box-shadow: 0px 5px 7px #e7dfdf;
+}
+#deposit-mobile{
+    background-color: #BC0018;
+    color: white;
+    width: 84vw;
+    height: 2.5rem;
+    border-radius: 6px;
+    margin-left: 3vw;
+}
+.payment-item-mobile{
+    margin: 1rem 0px;
+    width: 90vw;
+}
+.payment-item-mobile button{
+
+}

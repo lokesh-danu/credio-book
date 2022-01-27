@@ -1,8 +1,8 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
-import Menu from "../../image/Menu.png";
-
+// import Menu from "../../image/Menu.png";
+import { Link } from 'react-router-dom';
 const viewportContext = React.createContext({});
 
 const ViewportProvider = ({ children }) => {
@@ -31,31 +31,37 @@ const useViewport = () => {
     return { width, height };
 };
 
-const MobileComponent = () => {
-    const myFunction = () => {
-        var x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
+const MobileComponent = (props) => {
+    const navIndex = props.navIndex;
     return (
         <div>
-            <div class="mobile-container">
-                <div class="topnav">
-                    <a href="#home" class="active">Logo</a>
-                    <div id="myLinks">
-                        <a href="#news">News</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#about">About</a>
-                    </div>
-                    <a href="javascript:void(0);" class="icon" onclick={myFunction}>
+            <div className='mobile-navbar'>
+                    <button className="btn " type="button" 
+                    data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar"
+                    
+                    >
                         <i class="fa fa-bars"></i>
-                    </a>
+                    </button>
+                    <div id="navbar-index">
+                        <span>{navIndex}</span>
+                    </div>
+                    <div id="mobile-notification-icon">
+                    <i className='far fa-bell'>
+                    </i>
+                    </div>
+            </div>
+            <div className="collapse collapse-horizontal" id="sidebar" style={{maxWidth:'200px'}} >
+                <div className="" id="side-menu-cnt">
+                    <div>
+                        <Link to='#' style={{ textDecoration: 'none' }}>Your Account</Link>
+                        <Link to='#' style={{ textDecoration: 'none' }}>Feedback</Link>
+                        <Link to='#' style={{ textDecoration: 'none' }}>Refer a friend</Link>
+                        <Link to='#' style={{ textDecoration: 'none' }}>Privacy</Link>
+                        <Link to='#' style={{ textDecoration: 'none' }}>Help</Link>
+                    </div>
+                    <Link id="mobile-signout" to="#" style={{ textDecoration: 'none' }}>sign out</Link>
                 </div>
             </div>
-
         </div>
     );
 };
@@ -64,8 +70,8 @@ const DesktopComponent = () => {
     return (
         <div>
             <div className='top-navbar'>
-                <img src={Menu} alt="" className='navbar-menu' />
-                <a class="navbar-brand">Your service </a>
+                {/* <img src={Menu} alt="" className='navbar-menu' /> */}
+                <a className="navbar-brand">Your service </a>
                 <i style={{
                     position: "absolute",
                     top: "40%",
@@ -89,17 +95,17 @@ const DesktopComponent = () => {
 }
 
 
-const MyComponent = () => {
+const MyComponent = ({ navIndex }) => {
     const { width } = useViewport();
     const breakpoint = 620;
 
-    return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
+    return width < breakpoint ? <MobileComponent navIndex={navIndex} /> : <DesktopComponent />;
 };
 
-export default function Navbar() {
+export default function Navbar({ navIndex }) {
     return (
         <ViewportProvider>
-            <MyComponent />
+            <MyComponent navIndex={navIndex} />
         </ViewportProvider>
     );
 }

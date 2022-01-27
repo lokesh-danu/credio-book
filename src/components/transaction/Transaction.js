@@ -7,6 +7,7 @@ import Navbar from '../Navbar/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const viewportContext = React.createContext({});
 
@@ -39,6 +40,8 @@ const useViewport = () => {
 const MobileComponent = () => {
     return (
         <div>
+            <Navbar navIndex={"Transactions Overview"}></Navbar>
+            <Sidebar index='transactions' ></Sidebar>
             <div className='mobile-display' style={{ background: "#ffffff" }}>
                 <div className='mobile-upper-card'>
                     <div className='card-body' style={{ display: 'flex', flexDirection: "row" }}>
@@ -168,7 +171,7 @@ const MobileComponent = () => {
                                 <li className="column-text my-5">$690</li>
                             </ul>
                         </div>
-                        <div className='col-sm-5 mx-4'>
+                        <div className='col-sm-5 mx-4' style={{ marginLeft: "0rem" }}>
                             <span className="column-heading">Date</span>
                             <ul style={{ marginLeft: "-1.5rem" }}>
                                 <li className="column-text my-5">1-10-2021</li>
@@ -189,7 +192,9 @@ const MobileComponent = () => {
                             </ul>
                         </div>
                     </div>
+                    <Link to ="/payment">
                     <button className="btn make-payment mx-3">Make a Payment</button>
+                    </Link>
                 </div>
             </div>
         </div>

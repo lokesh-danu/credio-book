@@ -6,6 +6,7 @@ import Loc from "../../image/location.png";
 import Bank from "../../image/Icon.png";
 import NavBar from "../Navbar/Navbar";
 import SideBar from "../sidebar/Sidebar";
+import { Link } from 'react-router-dom';
 
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,22 +41,51 @@ const useViewport = () => {
 const MobileComponent = () => {
   return (
     <div>
-      <div className='mobile-display'>
-        <div className='mobile-view-heading'>
-          <span className='dashboard-heading-text'>Cash Flow</span>
-        </div>
-        <div className='container my-5 py-2'>
-          <div className='mobile-cash-flow-card'>
-
-          </div>
-          <div className='current-cash-card my-3'>
-            <div className='card-body' style={{ display: "flex", flexDirection: "column" }}>
-              <span className='current-cash-amount'>$35000</span>
-              <span className='current-cash-text my-3'>Current Cash Balance</span>
+      <NavBar navIndex="Users"></NavBar>
+      <SideBar index="dashboard" ></SideBar>
+      <div className='user-cnt-mobile'>
+          <div className="users-card my-3">
+            <div className='card-body'>
+              <div className='store-info' style={{ marginTop: "0rem" }}>
+                <img className='store-dp' src={Store} />
+                <div className='store-infos' style={{ marginLeft: "1rem" }}>
+                  <span className='store-name'>Tony T store</span>
+                  <span style={{ color: "#707070", fontSize: "16px", fontWeight: "normal" }} className='store-balance'>+1 (212) 336-1440</span>
+                </div>
+              </div>
+              <hr />
+              <div className="user-bank-detail">
+                <span className="bank-heading">Bank Details</span>
+                <div className="user-bank-name my-2">
+                  <i class="fas fa-university"></i>
+                  <span className="bank-name">021000322 – Bank of America</span>
+                </div>
+              </div>
             </div>
+          </div>
+          <div className="users-card my-3">
+            <div className='card-body'>
+              <div className='store-info' style={{ marginTop: "0rem" }}>
+                <img className='store-dp' src={Store} />
+                <div className='store-infos' style={{ marginLeft: "1rem" }}>
+                  <span className='store-name'>Tony T store</span>
+                  <span style={{ color: "#707070", fontSize: "16px", fontWeight: "normal" }} className='store-balance'>+1 (212) 336-1440</span>
+                </div>
+              </div>
+              <hr />
+              <div className="user-bank-detail">
+                <span className="bank-heading">Bank Details</span>
+                <div className="user-bank-name my-2">
+                  <i class="fas fa-university"></i>
+                  <span className="bank-name">021000322 – Bank of America</span>
+                </div>
+              </div>
           </div>
         </div>
       </div>
+      <Link to="/new/user">
+        <button className="btn make-payment mx-3">Create User</button>
+      </Link>
     </div>
   )
 }
