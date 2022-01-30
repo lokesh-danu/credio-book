@@ -39,7 +39,7 @@ const useViewport = () => {
     return { width, height };
 };
 
-const MobileComponent = () => {
+const NotInUse = () => {
     return (
         <div>
             <Navbar navIndex={"Transactions Overview"}></Navbar>
@@ -202,7 +202,7 @@ const MobileComponent = () => {
         </div>
     )
 }
-const NewComponent = () => {
+const MobileComponent = () => {
     const [data, setData] = useState(null);
     const [isloaded, setIsloaded] = useState(false);
     const [overview, setOverview] = useState(true);
@@ -246,35 +246,42 @@ const NewComponent = () => {
             {
                 data && 
             <div className="transaction-cnt-mobile">
-                <div className="transaction-top-bar-mobile">
-
-                </div>
+                <select className="transaction-top-bar-mobile" name="" id="">
+                    <option value="today">Today</option>
+                    <option value="last-week">Last week</option>
+                    <option value="last-month">Last Month</option>
+                    <option value="All">All</option>
+                </select>
+                
                 <div className="transactions-overview-mobile">
                     {
                         data.data.map(el => {
                             return (
+                                <Link to="/transactions/history" style={{textDecoration:'none'}}>
+
                                 <div className="transaction-card-mobile">
-                                    <div className=''>
-                                        <div className='store-info'>
-                                            <img className='store-dp' src={Store} />
-                                            <div className='store-infos'>
-                                                <span className='store-name'>{el.user.businessName}</span>
-                                                <span className='store-balance'>${el.user.balance}</span>
+                                    <div id="transaction-card-top-mobile">
+                                        
+                                            <img className='' src={Store} />
+                                            <div id='trans-right-mobile'>
+                                                <span className=''>{el.user.businessName}</span>
+                                                <span className=''>${el.user.balance}</span>
                                             </div>
-                                        </div>
-                                        <hr />
-                                        <div className='row' style={{ marginTop: "0.5rem" }}>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='deposit-text'>New Balance</span>
-                                                <span className='deposit-text'>${el.user.balance}</span>
-                                            </div>
-                                            <div className='col-md-6 column-store'>
-                                                <span className='balance'>{el.user.updatedAt.substring(0, 10)}</span>
-                                                <span className='balance'>{el.user.updatedAt.substring(11, 16)}</span>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
+                                        <hr />
+                                        <div id='transaction-card-bottom-mobile' >
+                                            <div id='trans-bottom-left-mobile'>
+                                                <span className=''>New Balance</span>
+                                                <span className=''>${el.user.balance}</span>
+                                            </div>
+                                            <div id='trans-bottom-right-mobile'>
+                                                <span className=''>{el.user.updatedAt.substring(0, 10)}</span>
+                                                <span className=''>{el.user.updatedAt.substring(11, 16)}</span>
+                                            </div>
+                                        </div>
                                 </div>
+                                </Link>
                             )
                         })
                     }
@@ -511,7 +518,7 @@ const MyComponent = () => {
     const { width } = useViewport();
     const breakpoint = 620;
 
-    return width < breakpoint ? <NewComponent /> : <DesktopComponent history={history} />;
+    return width < breakpoint ? <MobileComponent /> : <DesktopComponent history={history} />;
 };
 
 export default function Transaction() {
