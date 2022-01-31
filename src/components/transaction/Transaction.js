@@ -231,14 +231,15 @@ const MobileComponent = () => {
     }, []);
     
     return (
-        <div>
+        // <></>
+        <>
             <Navbar navIndex={"Transactions Overview"}></Navbar>
             <Sidebar index='transactions' ></Sidebar>
             {
                 !isloaded && <div className="loading-mobile">
                     <FontAwesomeIcon
                                     className="spinner mt-6 mb-4"
-                                    size="6x"
+                                    size="4x"
                                     icon={faSpinner}
                                 ></FontAwesomeIcon>
                 </div>
@@ -288,7 +289,7 @@ const MobileComponent = () => {
                 </div>
             </div>
                     }
-        </div>
+        </>
     )
 }
 class DesktopComponent extends React.Component {
